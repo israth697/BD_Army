@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class ArmsetupController extends Controller
 {
     public function Armsetup (){
-        return view ('backend.page.armsetup.Armsetup');
+        $armsetup=Armsetup::all();
+        return view ('backend.page.armsetup.Armsetup',compact('Armsetup'));
+    
     }
 
     public function agree (){

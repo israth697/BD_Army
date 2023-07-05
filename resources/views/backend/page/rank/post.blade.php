@@ -2,27 +2,19 @@
 @section('content')
 <div class="container">
   <h2>Rank Details</h2>
-<form>
+<form action="{{route('rank.store')}}" method="post" enctype="multipart/form-data">
+  @csrf
   <div class="form-group">
-    <label for="">Name</label>
-    <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">
+    <label for="">Rank Image</label>
+    <input type="file" name="image" class="form-control" id=""  placeholder="upload the image">
   </div>
   <div class="form-group">
-    <label for="">Email</label>
-    <input type="email" name="email" class="form-control" id=""  placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="">Contact</label>
-    <input type="tel" name="contact" class="form-control" id=""  placeholder="Enter contact">
-  </div>
-  <div class="form-group">
-    <label for="">Address</label>
-    <input type="text" name="address" class="form-control" id=""  placeholder="Enter address">
+    <label for="">Rank Name</label>
+    <input type="name" name="name" class="form-control" id=""  placeholder="rank name">
   </div>
 <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
-
 
 @endsection

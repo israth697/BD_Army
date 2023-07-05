@@ -3,7 +3,12 @@
 
 <div class="container">
   <h2>Soilders Information</h2>
-<form>
+<form action="{{route('soilders.store')}}" method="post">
+  @csrf
+  <div class="form-group">
+    <label for="">id_number</label>
+    <input type="id_number" name="id_number" class="form-control" id=""  placeholder="Enter your identity">
+  </div>
   <div class="form-group">
     <label for="">Name</label>
     <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">

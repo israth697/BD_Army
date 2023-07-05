@@ -31,6 +31,7 @@ Route::get('/idea',[DashboardController::class,'accept']) ->name('accept');
 
 Route::get('/type',[ArmstypeController::class,'Armstype']) ->name('Armstype');
 Route::get('/type-create',[ArmstypeController::class,'submit']) ->name('submit');
+Route::get('/type-store',[ArmstypeController::class,'store']) ->name('Armstype.store');
 
 Route::get('/setup',[ArmsetupController::class,'Armsetup']) ->name('Armsetup');
 Route::get('/setup-bot',[ArmsetupController::class,'agree']) ->name('agree');
@@ -40,9 +41,11 @@ Route::get('/money-bot',[PurchaseController::class,'tender']) ->name('tender');
 
 Route::get('/soilders',[soildersController::class,'soilders']) ->name('soilders.list');
 Route::get('/soilders-create',[soildersController::class,'create']) ->name('soilders.create');
+Route::post('/soilders-store',[soildersController::class,'store']) ->name('soilders.store');
 
 Route::get('/position',[RankController::class,'rank']) ->name('rank.list');
 Route::get('/position-bot',[RankController::class,'post']) ->name('rank.post');
+Route::post('/position-store',[RankController::class,'store']) ->name('rank.store');
 
 Route::get('/permission',[OfficerController::class,'officer']) ->name('officer.permit');
 Route::get('/firing',[OfficerController::class,'fire']) ->name('officer.fire');
