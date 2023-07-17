@@ -28,7 +28,7 @@
                             </a> 
                             <a class="nav-link" href="{{route('officer.permit')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Officer
+                                Authorised Officer
                             </a>
                             <a class="nav-link" href="{{route('damage.stock')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -41,10 +41,6 @@
                             <a class="nav-link" href="{{route('vendor.supply')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Vendor
-                            </a>
-                            <a class="nav-link" href="{{route('purchase.details')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Purchase Details
                             </a>
                         </div>
                     </div>

@@ -9,36 +9,37 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+      <th scope="col">Firing Notice</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($officer as $key=>$item)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+      <th scope="row">{{$key+1}}</th>
+      <td>{{$item->name}}</td>
+      <td>{{$item->email}}</td>
+      <td>{{$item->status}}</td>
+      <td>{{$item->firingnotice}}</td>
+      
+   
+<td>
+<a class="btn btn-success" href="">Edit</a>
+<a class="btn btn-warning" href="">Update</a>
+<a class="btn btn-danger" href="">Delete</a>
+</td>
+</tr>
+    @endforeach
+    
+    
   </tbody>
 </table>
 
-
-
+{{$officer->links()}}
 
 </div>
 

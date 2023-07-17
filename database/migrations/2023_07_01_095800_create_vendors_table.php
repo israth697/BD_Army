@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
+            $table->string('id_number');
+            $table->string('name');
+            $table->string('email');
+            $table->string('contact');
+            $table->text('address');
             $table->timestamps();
         });
     }
@@ -22,6 +27,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+
         Schema::dropIfExists('vendors');
+        
     }
 };

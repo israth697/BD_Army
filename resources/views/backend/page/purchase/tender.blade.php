@@ -1,8 +1,9 @@
 @extends('backend.master')
 @section('content')
 <div class="container">
-  <h2>Firing Order</h2>
-<form>
+  <h2>Purchase Details</h2>
+  <form action="{{route('Purchase.store')}}" method="post">
+  @csrf
   <div class="form-group">
     <label for="">Name</label>
     <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">
@@ -19,10 +20,12 @@
     <label for="">Address</label>
     <input type="text" name="address" class="form-control" id=""  placeholder="Enter address">
   </div>
+  <div class="form-group">
+    <label for="">Details</label>
+    <input type="text" name="details" class="form-control" id=""  placeholder="Enter details">
+  </div>
 <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
-
-
 @endsection

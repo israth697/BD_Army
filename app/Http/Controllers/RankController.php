@@ -9,14 +9,19 @@ class RankController extends Controller{
 
     public function rank()
     {
-        $rank=Rank::all();
+        $rank=Rank::paginate(5);
         return view ('backend.page.rank.rank',compact('rank'));
     }
 
     public function post (){
     return view('backend.page.rank.post');
     }
+    
     public function store(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'image'=>'required',
+        ]);
         //  dd($request->all());
         $fileName = null;
         if($request->hasFile('image'))

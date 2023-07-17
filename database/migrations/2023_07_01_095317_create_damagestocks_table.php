@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('damagestocks', function (Blueprint $table) {
             $table->id();
+            $table->string('amount');
+            $table->string('purpose');
+            $table->string('submition');
             $table->timestamps();
         });
     }

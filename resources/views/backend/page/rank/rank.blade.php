@@ -12,6 +12,7 @@
       <th scope="col">Serial</th>
       <th scope="col">Image</th>
       <th scope="col">Name</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -20,9 +21,10 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>
-        <img width="100px" src="{{url('/uploads/'.$item->image)}}" alt="">
+        <img width="50px";height="50px"; src="{{url('/uploads/'.$item->image)}}" alt="">
       </td>
       <td>{{$item->name}}</td>
+      <td>{{$item->status}}</td>
       
    
 <td>
@@ -38,7 +40,7 @@
 </table>
 
 
-
+{{$rank->links()}}
 
 </div>
 
