@@ -17,7 +17,6 @@ class VendorController extends Controller
     public function store(Request $request) {
         $request->validate([
             'name'=>'required',
-            'id_number'=>'required',
             'email'=>'required|email',
             'contact'=>'required',
             'address'=>'required',
@@ -26,7 +25,6 @@ class VendorController extends Controller
         Vendor::create([
             // database column name=>$request->input field name
             'name'=>$request->name,
-            'id_number'=>$request->id_number,
             'email'=>$request->email,
             'contact'=>$request->contact,
             'address'=>$request->address,

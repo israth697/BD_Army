@@ -3,11 +3,11 @@
 
 <div class="container">
   <h2>Damage weapon</h2>
-  <form action="{{route('weapon.store')}}" method="post">
+  <form action="{{route('damage.store')}}" method="post">
   @csrf
   <div class="form-group">
     <label for="">Amount</label>
-    <input type="number" name="amount" class="form-control" id=""  placeholder="Enter name">
+    <input type="number" name="amount" class="form-control" id=""  placeholder="Enter the amount">
   </div>
   <div class="form-group">
     <label for="">Purpose</label>

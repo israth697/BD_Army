@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('notice');
+            $table->string('firingnotice');
+            $table->string('status')->default('Active');
             $table->timestamps();
         });
     }

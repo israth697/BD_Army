@@ -22,7 +22,7 @@ class OfficerController extends Controller
             'firingnotice'=>'required',
         
         ]);
-       // dd($request->all());
+         //dd($request->all());
         Officer::create([
             // database column name=>$request->input field name
             'name'=>$request->name,

@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <h2>Firing Order</h2>
-  <form action="{{route('officer.store')}}" method="post">
+  <form action="{{route('damage.store')}}" method="post">
   @csrf
   <div class="form-group">
     <label for="">Name</label>

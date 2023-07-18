@@ -15,17 +15,21 @@ class DamageController extends Controller
         return view ('backend.page.damagestock.search');
     }
     public function store(Request $request){
+       // dd($request->all());
+
         $request->validate([
             'amount'=>'required',
             'purpose'=>'required',
             'submition'=>'required',
         ]);
-        //  dd($request->all());
+
+          
+         
         Damagestock::create([
             // database column name=>$request->input field name
             'amount'=>$request->amount,
             'purpose'=>$request->purpose,
-            'submition'=>$request->submition,
+            'submition'=>$request->submition
 
 
         ]);
