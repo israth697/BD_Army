@@ -46,7 +46,6 @@ Route::get('/type',[ArmstypeController::class,'Armstype']) ->name('Armstype');
 Route::get('/type-create',[ArmstypeController::class,'submit']) ->name('submit');
 Route::post('/type-store',[ArmstypeController::class,'store']) ->name('Armstype.store');
 
-
 Route::get('/setup',[ArmsetupController::class,'Armsetup']) ->name('Armsetup');
 Route::get('/setup-bot',[ArmsetupController::class,'agree']) ->name('agree');
 Route::post('/setup-store',[ArmsetupController::class,'store']) ->name('Armsetup.store');

@@ -17,6 +17,7 @@
       <th scope="col">Corps</th>
       <th scope="col">Contact</th>
       <th scope="col">Address</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -33,7 +34,7 @@
       <td>{{$item->corps}}</td>
       <td>{{$item->contact}}</td>
       <td>{{$item->address}}</td>
-      
+      <td>{{$item->status}}</td>
    
 <td>
 <a class="btn btn-success" href="">Edit</a>

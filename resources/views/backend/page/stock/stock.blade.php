@@ -10,7 +10,7 @@
   <thead>
   <tr>
       <th scope="col">ID</th>
-
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
   @foreach($stock as $key=>$item)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      
+      <td>{{$item->status}}</td>
    
 <td>
 <a class="btn btn-success" href="">Edit</a>

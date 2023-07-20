@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('corps');
             $table->string('contact');
-            $table->text('address');           
+            $table->text('address');  
+            $table->string('status')->default('Active');         
             $table->timestamps();
         });
     }

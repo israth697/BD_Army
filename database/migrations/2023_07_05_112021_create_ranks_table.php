@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
             $table->string('image'); 
-            $table->string('name');         
+            $table->string('name');  
+            $table->string('status')->default('Active');         
             $table->timestamps();
         });
     }
