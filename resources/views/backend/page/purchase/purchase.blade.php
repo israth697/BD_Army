@@ -30,7 +30,6 @@
       
    
 <td>
-<a class="btn btn-success" href="">Edit</a>
 <a class="btn btn-warning" href="">Update</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>

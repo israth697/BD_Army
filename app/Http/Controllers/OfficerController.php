@@ -16,6 +16,7 @@ class OfficerController extends Controller
         return view ('backend.page.officer.fire');
     }
     public function store(Request $request){
+        // dd($request->all());
         $request->validate([
             'name'=>'required',
             'email'=>'required|email',

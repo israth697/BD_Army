@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Armsetup;
+use App\Models\Armsetups;
+
 use Illuminate\Http\Request;
 
 class ArmsetupController extends Controller
 {
     public function Armsetup (){
-        $armsetup=Armsetup::paginate(5);
+        $armsetup=Armsetups::paginate(5);
+
         return view ('backend.page.armsetup.Armsetup',compact('armsetup'));
     
     }
 
     public function agree (){
+        
         return view('backend.page.armsetup.agree');
         }
         public function store(Request $request){
             $request->validate([
                 'name'=>'required',
                 'image'=>'required',
+                
                 'specification'=>'required',
                 
               
@@ -35,9 +39,10 @@ class ArmsetupController extends Controller
             
         }
             //  dd($request->all());
-            Armsetup::create([
+            Armsetups::create([
                 // database column name=>$request->input field name
                 'name'=>$request->name,
+                
                 'specification'=>$request->specification,
                 'image'=>$fileName
     

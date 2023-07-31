@@ -2,11 +2,11 @@
 @section('content')
 <div class="container">
   <h2>Firing Order</h2>
-  <form action="{{route('damage.store')}}" method="post">
+  <form action="{{route('officer.store')}}" method="post">
   @csrf
   <div class="form-group">
     <label for="">Name</label>
-    <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">
+    <input type="text" name="name" class="form-control" id=""  placeholder="Enter name">
   </div>
   <div class="form-group">
     <label for="">Email</label>

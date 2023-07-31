@@ -14,7 +14,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\soildersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\purchasedetailsController;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +36,9 @@ Route::post('/admin/do/login',[UserController::class,'doLogin'])->name('admin.do
 
 Route::group(['prefix'=>'admin'],function(){
   
+//for searchbar 
+Route::get('/search',[HomeController::class,'search'])->name('search');
+
 //for logout
 Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 

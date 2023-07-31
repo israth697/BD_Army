@@ -2,37 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Armsetups;
+use App\Models\Armstypes;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
 {
     public function weapon (){
-        $stock=Stock::paginate(5);
+        $stock=Stock::with("armstype","armsetup")->paginate(5);
         return view ('backend.page.stock.stock',compact('stock'));
     }
 
     public function collection (){
-        return view ('backend.page.stock.collection');
+        $armstype=Armstypes::all();
+        $armsetup=Armsetups::all();
+        return view ('backend.page.stock.collection',compact('armstype','armsetup'));
     }
 
     public function store(Request $request){
-        $request->validate([
-            'name'=>'required',
-            'id_number'=>'required',
-            'email'=>'required|email',
-            'contact'=>'required',
-            'address'=>'required',
-        ]);        
-        //  dd($request->all());
+       // dd($request->all());
+
+    
         Stock::create([
             // database column name=>$request->input field name
-            'name'=>$request->name,
-            'id_number'=>$request->id_number,
-            'email'=>$request->email,
-            'contact'=>$request->contact,
-            'address'=>$request->address,
-
+            'armstype_id'=>$request->id,
+            'type_quantity'=>$request->type_quantity,
+            'armsetup_id'=>$request->id,
+            'setup_quantity'=>$request->setup_quantity,
+            
         ]);
         return to_route('weapon.stock')->with('msg','Data store Successfully');
 

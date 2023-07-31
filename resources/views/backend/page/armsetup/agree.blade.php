@@ -13,6 +13,7 @@
     <label for="">Arms Setup Image</label>
     <input type="file" name="image" class="form-control" id=""  placeholder="upload the image">
   </div>
+  
   <div class="form-group">
     <label for="">Specification</label>
     <input type="text" name="specification" class="form-control" id=""  placeholder="Enter specification of setup">

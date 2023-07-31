@@ -15,7 +15,7 @@ class DamageController extends Controller
         return view ('backend.page.damagestock.search');
     }
     public function store(Request $request){
-       // dd($request->all());
+       dd($request->all());
 
         $request->validate([
             'amount'=>'required',
