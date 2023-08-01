@@ -11,9 +11,9 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Image</th>
-      
       <th scope="col">Status</th>
       <th scope="col">Specification</th>
+      <th scope="col">Arms Type Name</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -25,11 +25,9 @@
       <td>
         <img width="50px";height="50px"; src="{{url('/uploads/'.$item->image)}}" alt="">
       </td>
-
-      
       <td>{{$item->status}}</td>
       <td>{{$item->specification}}</td>
-      
+      <td>{{$item->armstype->name}}</td>
    
 <td>
 <a class="btn btn-warning" href="">Update</a>

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('damagestocks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('armstype_id')->constrained('armstypes')->cascadeOnDelete(); 
             $table->string('amount');
             $table->string('purpose');
             $table->string('submition');

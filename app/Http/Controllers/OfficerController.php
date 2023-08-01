@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Officer;
+use App\Models\Rank;
 use Illuminate\Http\Request;
 
 class OfficerController extends Controller
 {
     public function officer (){
-        $officer=Officer::paginate(5);
+        $officer=Officer::with('rank')->paginate(5);
         return view ('backend.page.officer.officer',compact('officer'));
     }
 
     public function fire (){
-        return view ('backend.page.officer.fire');
+        $rank=Rank::all();
+        return view ('backend.page.officer.fire',compact('rank'));
     }
     public function store(Request $request){
         // dd($request->all());
         $request->validate([
             'name'=>'required',
             'email'=>'required|email',
+            'rank_id'=>'required',
             'firingnotice'=>'required',
         
         ]);
@@ -28,6 +31,7 @@ class OfficerController extends Controller
             // database column name=>$request->input field name
             'name'=>$request->name,
             'email'=>$request->email,
+            'rank_id'=>$request->rank_id,
             'firingnotice'=>$request->firingnotice,
             
 

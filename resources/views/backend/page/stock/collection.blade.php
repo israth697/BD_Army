@@ -4,6 +4,15 @@
 <div class="container">
   <h2>Stock collection</h2>
   <form action="{{route('weapon.store')}}" method="post">
+  @if($errors->any())
+        @foreach($errors->all() as $error)
+          <p class="alert alert-danger">{{$error}}</p>
+        @endforeach
+    @endif
+
+    @if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
   @csrf
   <br>
   <select class="form-select" name="id" aria-label="amrrrrr mon">

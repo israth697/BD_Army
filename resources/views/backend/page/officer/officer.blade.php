@@ -12,6 +12,7 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Rank</th>
       <th scope="col">Status</th>
       <th scope="col">Firingnotice</th>
       <th scope="col">Action</th>
@@ -23,6 +24,7 @@
       <th scope="row">{{$key+1}}</th>
       <td>{{$item->name}}</td>
       <td>{{$item->email}}</td>
+      <td>{{$item->rank->name}}</td>
       <td>{{$item->status}}</td>
       <td>{{$item->firingnotice}}</td>
       

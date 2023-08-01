@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Soilder;
+use App\Models\Rank;
 use Illuminate\Http\Request;
 
 
@@ -10,12 +11,13 @@ use Illuminate\Http\Request;
 class soildersController extends Controller
 {
     public function soilders (){
-        $soilder=Soilder::paginate(5);
+        $soilder=Soilder::with('rank')->paginate(5);
         return view ('backend.page.soilders.soilders',compact('soilder'));
     }
 
     public function create (){
-    return view('backend.page.soilders.create');
+        $rank=Rank::all();
+    return view('backend.page.soilders.create',compact('rank'));
     }
     public function store(Request $request){
         $request->validate([
@@ -23,6 +25,7 @@ class soildersController extends Controller
             'id_number'=>'required',
             'image'=>'required',
             'email'=>'required|email',
+            'rank_id'=>'required',
             'corps'=>'required',
             'contact'=>'required',
             'address'=>'required',
@@ -41,6 +44,7 @@ class soildersController extends Controller
             'id_number'=>$request->id_number,
             'image'=>$fileName,
             'email'=>$request->email,
+            'rank_id'=>$request->rank_id,
             'corps'=>$request->corps,
             'contact'=>$request->contact,
             'address'=>$request->address,

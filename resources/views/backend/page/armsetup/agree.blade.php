@@ -4,6 +4,15 @@
 <div class="container">
   <h2>Arms Setup</h2>
   <form action="{{route('Armsetup.store')}}" method="post" enctype="multipart/form-data">
+  @if($errors->any())
+        @foreach($errors->all() as $error)
+          <p class="alert alert-danger">{{$error}}</p>
+        @endforeach
+    @endif
+
+    @if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
   @csrf
   <div class="form-group">
     <label for="">Name</label>
@@ -18,6 +27,13 @@
     <label for="">Specification</label>
     <input type="text" name="specification" class="form-control" id=""  placeholder="Enter specification of setup">
   </div>
+  <br>
+  <select class="form-select" name="armstype_id" aria-label="amrrrrr mon">
+  <option selected>Open this select menu </option>
+  @foreach ($armstype as $item )
+  <option  value="{{$item->id}}">{{$item->name}}</option>
+  @endforeach
+</select>
 <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

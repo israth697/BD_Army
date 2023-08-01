@@ -14,6 +14,7 @@
       <th scope="col">Name</th>
       <th scope="col">Image</th>
       <th scope="col">Email</th>
+      <th scope="col">Rank</th>
       <th scope="col">Corps</th>
       <th scope="col">Contact</th>
       <th scope="col">Address</th>
@@ -31,6 +32,7 @@
         <img width="50px";height="50px"; src="{{url('/uploads/'.$item->image)}}" alt="">
       </td>
       <td>{{$item->email}}</td>
+      <td>{{$item->rank->name}}</td>
       <td>{{$item->corps}}</td>
       <td>{{$item->contact}}</td>
       <td>{{$item->address}}</td>

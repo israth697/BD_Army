@@ -10,6 +10,7 @@
   <thead>
   <tr>
       <th scope="col">ID</th>
+      <th scope="col">Arms Type Name</th>
       <th scope="col">Amount</th>
       <th scope="col">Purpose</th>
       <th scope="col">Submition</th>
@@ -20,6 +21,7 @@
   @foreach($damagestock as $key=>$item)
     <tr>
       <th scope="row">{{$key+1}}</th>
+       <td>{{$item->armstype->name}}</td>
       <td>{{$item->amount}}</td>
       <td>{{$item->purpose}}</td>
       <td>{{$item->submition}}</td>

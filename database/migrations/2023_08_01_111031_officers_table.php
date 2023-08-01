@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('soilders', function (Blueprint $table) {
+        Schema::create('officers', function (Blueprint $table) {
             $table->id();
-            $table->string('id_number');
             $table->string('name');
-            $table->string('image');
             $table->string('email');
-            $table->string('corps');
-            $table->string('contact');
-            $table->text('address');  
-            $table->string('status')->default('Active');         
+            $table->foreignId('rank_id')->constrained('ranks')->cascadeOnDelete();
+            $table->string('firingnotice');
+            $table->string('status')->default('Active');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('soilders');
+        Schema::dropIfExists('officers');
     }
 };

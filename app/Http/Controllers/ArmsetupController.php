@@ -3,28 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Armsetups;
-
+use App\Models\Armstypes;
 use Illuminate\Http\Request;
 
 class ArmsetupController extends Controller
 {
     public function Armsetup (){
-        $armsetup=Armsetups::paginate(5);
-
+        $armsetup=Armsetups::with('armstype')->paginate(5);
         return view ('backend.page.armsetup.Armsetup',compact('armsetup'));
     
     }
 
     public function agree (){
-        
-        return view('backend.page.armsetup.agree');
+        $armstype=Armstypes::all();
+        return view('backend.page.armsetup.agree',compact('armstype'));
         }
         public function store(Request $request){
             $request->validate([
                 'name'=>'required',
                 'image'=>'required',
-                
                 'specification'=>'required',
+                'armstype_id'=>'required',
                 
               
             ]);
@@ -42,12 +41,12 @@ class ArmsetupController extends Controller
             Armsetups::create([
                 // database column name=>$request->input field name
                 'name'=>$request->name,
-                
                 'specification'=>$request->specification,
-                'image'=>$fileName
-    
+                'image'=>$fileName,
+                'armstype_id'=>$request->armstype_id
             ]);
             return to_route('Armsetup')->with('msg','Data store Successfully');
     
         }
 }
+

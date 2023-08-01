@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('specification');    
             $table->string('status')->default('Active');
+            $table->foreignId('armstype_id')->constrained('armstypes')->cascadeOnDelete();
             $table->timestamps();
         });
     }

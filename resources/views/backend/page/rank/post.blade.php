@@ -3,6 +3,15 @@
 <div class="container">
   <h2>Rank Details</h2>
 <form action="{{route('rank.store')}}" method="post" enctype="multipart/form-data">
+@if($errors->any())
+        @foreach($errors->all() as $error)
+          <p class="alert alert-danger">{{$error}}</p>
+        @endforeach
+    @endif
+
+    @if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
   @csrf
   <div class="form-group">
     <label for="">Rank Image</label>

@@ -3,6 +3,15 @@
 <div class="container">
   <h2>Firing Order</h2>
   <form action="{{route('officer.store')}}" method="post">
+  @if($errors->any())
+        @foreach($errors->all() as $error)
+          <p class="alert alert-danger">{{$error}}</p>
+        @endforeach
+    @endif
+
+    @if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
   @csrf
   <div class="form-group">
     <label for="">Name</label>
@@ -11,6 +20,14 @@
   <div class="form-group">
     <label for="">Email</label>
     <input type="email" name="email" class="form-control" id=""  placeholder="Enter email">
+  </div>
+  <div>
+  <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
+  <option selected>Open this select menu </option>
+  @foreach ($rank as $item )
+  <option  value="{{$item->id}}">{{$item->name}}</option>
+  @endforeach
+</select>
   </div>
   <div class="form-group">
     <label for="">Firing Notice</label>
