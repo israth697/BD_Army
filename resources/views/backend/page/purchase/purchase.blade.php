@@ -15,6 +15,7 @@
       <th scope="col">Contact</th>
       <th scope="col">Address</th>
       <th scope="col">Details</th>
+      <th scope="col">Vendor Name</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -27,6 +28,7 @@
       <td>{{$item->contact}}</td>
       <td>{{$item->address}}</td>
       <td>{{$item->details}}</td>
+      <td>{{$item->vendor->name}}</td>
       
    
 <td>

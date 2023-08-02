@@ -9,4 +9,9 @@ class Purchase extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function vendor () 
+    {
+       return $this->belongsTo(Vendor::class,'vendor_id','id');
+    }
 }

@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Purchase;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 
 class PurchaseController extends Controller
 {
     public function Purchase (){
-        $purchase=Purchase::paginate(5);
+        $purchase=Purchase::with('vendor')->paginate(5);
         return view ('backend.page.purchase.Purchase',compact('purchase'));
     }
 
     public function tender (){
-        return view ('backend.page.purchase.tender');
+        $vendor=Vendor::all();
+        return view ('backend.page.purchase.tender',compact('vendor'));
     }
     public function store(Request $request){
+        // dd($request->all());
         $request->validate([
             'name'=>'required',
             'email'=>'required|email',
@@ -23,7 +26,7 @@ class PurchaseController extends Controller
             'address'=>'required',
             'details'=>'required',
         ]);
-        //  dd($request->all());
+            // dd($request->all());
         Purchase::create([
             // database column name=>$request->input field name
             'name'=>$request->name,
@@ -31,6 +34,7 @@ class PurchaseController extends Controller
             'contact'=>$request->contact,
             'address'=>$request->address,
             'details'=>$request->details,
+            'vendor_id'=>$request->vendor_id,
 
         ]);
         return to_route('Purchase')->with('msg','Data store Successfully');

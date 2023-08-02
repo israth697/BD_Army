@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('contact');
             $table->text('address');
-            $table->string('details');    
+            $table->string('details'); 
+            $table->foreignId('vendor_id')->constrained('vendors')->cascadeOnDelete();   
             $table->timestamps();
         });
     }

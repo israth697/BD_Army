@@ -85,4 +85,6 @@ Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply')
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
 
+
+
 });

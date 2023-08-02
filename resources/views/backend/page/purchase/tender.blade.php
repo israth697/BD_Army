@@ -33,6 +33,17 @@
     <label for="">Details</label>
     <input type="text" name="details" class="form-control" id=""  placeholder="Enter details">
   </div>
+  <div>
+  <br>
+  <label for="">Vendor</label>
+  <select class="form-select" name="vendor_id" aria-label="amrrrrr mon">
+  <option selected value="null">Open this select menu </option>
+  @foreach ($vendor as $item )
+  <option  value="{{$item->id}}">{{$item->name}}</option>
+  @endforeach
+</select>
+<br>
+  </div>
 <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
