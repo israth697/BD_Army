@@ -20,6 +20,7 @@ class soildersController extends Controller
     return view('backend.page.soilders.create',compact('rank'));
     }
     public function store(Request $request){
+        // dd($request->all());
         $request->validate([
             'name'=>'required',
             'id_number'=>'required',
@@ -37,7 +38,6 @@ class soildersController extends Controller
             $fileName =date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('/uploads',$fileName);
         }   
-        //  dd($request->all());
         Soilder::create([
             // database column name=>$request->input field name
             'name'=>$request->name,

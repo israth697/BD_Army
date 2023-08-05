@@ -30,7 +30,9 @@
     <label for="">Email</label>
     <input type="email" name="email" class="form-control" id=""  placeholder="Enter email">
   </div>
+  <br>
   <div>
+  <label for="">Rank</label>
   <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
   <option selected>Open this select menu </option>
   @foreach ($rank as $item )
@@ -38,9 +40,18 @@
   @endforeach
 </select>
   </div>
+  <br>
   <div class="form-group">
     <label for="">Corps</label>
-    <input type="text" name="corps" class="form-control" id=""  placeholder="Enter your corp type">
+    <select class="form-select" name="corps" aria-label="Default select example">
+  <option selected>Selete the crops category</option>
+  <option value="Signal">Signal</option>
+  <option value="Education">Education</option>
+  <option value="Engineer">Engineer</option>
+  <option value="Medical">Medical</option>
+  <option value="Architecture">Architecture</option>
+  <option value="Training Officer">Training Officer</option>
+</select>
   </div>
   <div class="form-group">
     <label for="">Contact</label>

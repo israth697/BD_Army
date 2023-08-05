@@ -28,8 +28,9 @@
     <input type="text" name="specification" class="form-control" id=""  placeholder="Enter specification of setup">
   </div>
   <br>
+  <label for="">Arms Type</label>
   <select class="form-select" name="armstype_id" aria-label="amrrrrr mon">
-  <option selected>Open this select menu </option>
+  <option selected>Selete The Arms Type</option>
   @foreach ($armstype as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach

@@ -21,14 +21,17 @@
     <label for="">Email</label>
     <input type="email" name="email" class="form-control" id=""  placeholder="Enter email">
   </div>
+  <br>
   <div>
+  <label for="">Rank</label>
   <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
-  <option selected>Open this select menu </option>
+  <option selected>Select the rank</option>
   @foreach ($rank as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach
 </select>
   </div>
+  <br>
   <div class="form-group">
     <label for="">Firing Notice</label>
     <input type="text" name="firingnotice" class="form-control" id=""  placeholder="Give firing order">

@@ -35,9 +35,9 @@
   </div>
   <div>
   <br>
-  <label for="">Vendor</label>
+  <label for="">Vendor Name</label>
   <select class="form-select" name="vendor_id" aria-label="amrrrrr mon">
-  <option selected value="null">Open this select menu </option>
+  <option selected value="null">Selete The Vendor Name</option>
   @foreach ($vendor as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach
