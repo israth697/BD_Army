@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function login() 
     {
-        return view('backend.page.login');
+        return view('backend.page.login.login');
     }
     public function doLogin(Request $request)
     {
@@ -21,15 +21,15 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required'
         ]);
-        dd($request->all());
+        // dd($request->all());
         // $credentials=$request->only(['email','password']);
 
         // if(auth()->attempt([$request->email,$request->password]))
 
 
         $credentials=$request->except(['_token']);
-        dd($credentials);
-        if(auth()->attempt($credentials))
+        // dd($credentials);
+        if(Auth::attempt($credentials))
         {
             //true block
 
@@ -41,8 +41,6 @@ class UserController extends Controller
             return redirect()->back();
 
         }
-
-
 
     }
      public function logout()

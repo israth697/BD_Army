@@ -15,4 +15,8 @@ class armsetups extends Model
        return $this->belongsTo(Armstypes::class,'armstype_id','id');
     }
 
+  
 }
+
+
+

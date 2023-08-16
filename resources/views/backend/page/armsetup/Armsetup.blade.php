@@ -30,7 +30,7 @@
       <td>{{$item->armstype->name}}</td>
    
 <td>
-<a class="btn btn-warning" href="">Update</a>
+<a class="btn btn-warning" href="{{route('arms.setup.edit',$item->id)}}">Edit</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>
 </tr>

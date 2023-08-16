@@ -47,5 +47,26 @@ class ArmstypeController extends Controller
         return to_route('Armstype')->with('msg','Data store Successfully');
 
     }
+
+    public function edit_type($id) 
+    {
+        $armstype=Armstypes::find($id);
+        return view ('backend.page.armstype.editarmstype',compact('armstype')); 
+    }
         
+    public function update_type(Request $request,$id)
+    {
+        $armstype=Armstypes::findOrFail($id);
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+         ]);
+
+        $armstype->update([
+            'name'=>$request->name,
+            'description'=>$request->description,
+        ]);
+
+        return to_route('Armstype');
+    }
 }

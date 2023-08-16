@@ -34,7 +34,7 @@ Route::get('/admin/login',[UserController::class,'login'])->name('admin.login');
 //submit login form
 Route::post('/admin/do/login',[UserController::class,'doLogin'])->name('admin.do.login');
 
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'','middleware'=>['auth']],function(){
   
 //for searchbar 
 Route::get('/search',[HomeController::class,'search'])->name('search');
@@ -48,10 +48,14 @@ Route::get('/idea',[DashboardController::class,'accept']) ->name('accept');
 Route::get('/type',[ArmstypeController::class,'Armstype']) ->name('Armstype');
 Route::get('/type-create',[ArmstypeController::class,'submit']) ->name('submit');
 Route::post('/type-store',[ArmstypeController::class,'store']) ->name('Armstype.store');
+Route::get('/type-edit/{id}',[ArmstypeController::class,'edit_type']) ->name('Armstype.edit');
+Route::post('/type-update/{id}',[ArmstypeController::class,'update_type']) ->name('Armstype.update');
 
 Route::get('/setup',[ArmsetupController::class,'Armsetup']) ->name('Armsetup');
 Route::get('/setup-bot',[ArmsetupController::class,'agree']) ->name('agree');
 Route::post('/setup-store',[ArmsetupController::class,'store']) ->name('Armsetup.store');
+Route::get('arms_setup/edit/{id}',[ArmsetupController::class,'setup_edit'])->name('arms.setup.edit');
+Route::post('arms_setup/update/{id}',[ArmsetupController::class,'setup_update'])->name('arms.setup.update');
 
 
 Route::get('/money',[PurchaseController::class,'Purchase']) ->name('Purchase');
@@ -65,8 +69,13 @@ Route::post('/soilders-store',[soildersController::class,'store']) ->name('soild
 
 
 Route::get('/position',[RankController::class,'rank']) ->name('rank.list');
+Route::get('/position/view/{id}',[RankController::class,'rank_view']) ->name('rank.view');
 Route::get('/position-bot',[RankController::class,'post']) ->name('rank.post');
 Route::post('/position-store',[RankController::class,'store']) ->name('rank.store');
+Route::get('/position-edit/{id}',[RankController::class,'edit']) ->name('rank.edit');
+Route::post('/position-update/{id}',[RankController::class,'update']) ->name('rank.update');
+Route::get('/position-delete/{id}',[RankController::class,'delete']) ->name('rank.delete');
+
 
 Route::get('/permission',[OfficerController::class,'officer']) ->name('officer.permit');
 Route::get('/firing',[OfficerController::class,'fire']) ->name('officer.fire');

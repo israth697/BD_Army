@@ -9,4 +9,9 @@ class Armstypes extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function armStype()
+    {
+
+        return $this->belongsTo(Armstypes::class,'armstype_id','id');
+    }
 }

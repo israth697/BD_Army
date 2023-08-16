@@ -48,5 +48,20 @@ class ArmsetupController extends Controller
             return to_route('Armsetup')->with('msg','Data store Successfully');
     
         }
+
+        public function setup_edit($id){
+            // $armstype=Armstypes::all();
+            // dd($armstype);
+    
+            $armsetup=Armsetups::find($id);
+            return view('backend.page.armsetup.edit_setup',compact('armsetup'));
+        }
+
+        public function setup_update(Request $request,$id){
+            dd($request->all());
+            $armsetup=Armsetups::find($id);
+
+
+        }
 }
 
