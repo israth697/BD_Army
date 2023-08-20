@@ -13,6 +13,13 @@ class StockController extends Controller
         $stock=Stock::with("armstype","armsetup")->paginate(5);
         return view ('backend.page.stock.stock',compact('stock'));
     }
+           
+    public function stock_view($id){
+        $stock=Stock::find($id);
+        // dd($rank);
+        return view('backend.page.stock.stock_view',compact('stock'));
+    }
+
 
     public function collection (){
         $armstype=Armstypes::all();

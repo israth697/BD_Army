@@ -19,7 +19,7 @@
     <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">
   </div>
   <div class="form-group">
-    <label for="">Arms Type Image</label>
+    <label for="">Arms Item Image</label>
     <input type="file" name="image" class="form-control" id=""  placeholder="upload the image">
   </div>
   <div class="form-group">

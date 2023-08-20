@@ -52,4 +52,9 @@ class UserController extends Controller
         return redirect()->route('admin.login');
     }
 
+    public function profile()
+    {
+        return view('backend.page.profile.profile');
+    }
+
 }

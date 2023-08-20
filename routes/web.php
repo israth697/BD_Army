@@ -87,13 +87,17 @@ Route::get('/arm',[DamageController::class,'search']) ->name('damage.search');
 Route::post('/arms-stock',[DamageController::class,'store']) ->name('damage.store');
 
 Route::get('/weapon',[StockController::class,'weapon']) ->name('weapon.stock');
+Route::get('/stock/view/{id}',[StockController::class,'stock_view']) ->name('stock.view');
 Route::get('/weapons',[StockController::class,'collection']) ->name('weapon.collection');
 Route::post('/weapon-store',[StockController::class,'store']) ->name('weapon.store');
+
+
 
 Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply');
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
 
 
+Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
 
 });

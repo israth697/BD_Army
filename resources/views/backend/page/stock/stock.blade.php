@@ -11,8 +11,8 @@
   <thead>
   <tr>
       <th scope="col">ID</th>
-      <th scope="col">Arms Type Name</th>
-      <th scope="col">Type Quantity</th>
+      <th scope="col">Arms Item Name</th>
+      <th scope="col">Item Quantity</th>
       <th scope="col">Arms Setup Name</th>
       <th scope="col">Setup Quantity</th>
       <th scope="col">Status</th>
@@ -30,7 +30,7 @@
       <td>{{$item->status}}</td>
    
 <td>
-<a class="btn btn-success" href="">View</a>
+<a class="btn btn-success" href="{{route('stock.view',$item->id)}}">View</a>
 <a class="btn btn-warning" href="">Update</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>

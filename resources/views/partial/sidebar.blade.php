@@ -8,7 +8,7 @@
                             </a>   
                             <a class="nav-link" href="{{route('Armstype')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Arms Type
+                                Arms Item
                             </a>
                             <a class="nav-link" href="{{route('Armsetup')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -30,19 +30,23 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Authorised Officer
                             </a>
-                            <a class="nav-link" href="{{route('damage.stock')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Damage Stock
-                            </a>
+                           
+                           
                             <a class="nav-link" href="{{route('weapon.stock')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Stock
                             </a>
+                            
+                            @if(auth()->user()->role !='admin')
+                            <a class="nav-link" href="{{route('damage.stock')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Damage Stock
+                            </a>
+                            @endif
                             <a class="nav-link" href="{{route('vendor.supply')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Vendor
                             </a>
-                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

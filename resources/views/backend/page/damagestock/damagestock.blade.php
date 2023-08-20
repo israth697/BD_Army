@@ -4,16 +4,15 @@
 <div class="container">
     <h2>Damage List</h2>
     <br>
-    <a class="btn btn-success" href="{{route('damage.search')}}">Create</a>
+    <a class="btn btn-success" href="{{route('damage.search')}}">Add New Damage Stock</a>
  <br>
 <table class="table">
   <thead>
   <tr>
       <th scope="col">ID</th>
-      <th scope="col">Arms Type Name</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Purpose</th>
-      <th scope="col">Submition</th>
+      <th scope="col">Arms Item Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Reason</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -22,9 +21,9 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
        <td>{{$item->armstype->name}}</td>
-      <td>{{$item->amount}}</td>
-      <td>{{$item->purpose}}</td>
-      <td>{{$item->submition}}</td>
+      <td>{{$item->quantity}}</td>
+      <td>{{$item->reason}}</td>
+      
       
    
 <td>

@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-    <h2>Arms Type</h2>
+    <h2>Arms Item</h2>
     <br>
     <a class="btn btn-success" href="{{route('submit')}}">Create</a>
  <br>
