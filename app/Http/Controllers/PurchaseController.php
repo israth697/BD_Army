@@ -48,4 +48,6 @@ class PurchaseController extends Controller
         return to_route('Purchase')->with('msg','Data store Successfully');
 
     }
+
+    
 }

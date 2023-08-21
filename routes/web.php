@@ -15,6 +15,7 @@ use App\Http\Controllers\soildersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\purchasedetailsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +63,6 @@ Route::get('/money/view/{id}',[PurchaseController::class,'tender_view']) ->name(
 Route::get('/money-bot',[PurchaseController::class,'tender']) ->name('tender');
 Route::post('/money-store',[PurchaseController::class,'store']) ->name('Purchase.store');
 
-
 Route::get('/soilders',[soildersController::class,'soilders']) ->name('soilders.list');
 Route::get('/soilders/view/{id}',[soildersController::class,'soilders_view']) ->name('soilders.view');
 Route::get('/soilders-create',[soildersController::class,'create']) ->name('soilders.create');
@@ -101,6 +101,8 @@ Route::get('/supply/view/{id}',[VendorController::class,'vendor_view']) ->name('
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
 
+Route::get('/money-report',[ReportController::class,'tender_report']) ->name('tender.Report');
+Route::post('/money-report/ab',[ReportController::class,'show_report']) ->name('show.Report');
 
 Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
 
