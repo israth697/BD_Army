@@ -13,6 +13,14 @@ class PurchaseController extends Controller
         return view ('backend.page.purchase.Purchase',compact('purchase'));
     }
 
+    public function tender_view ($id){
+        $purchase=Purchase::find($id);
+
+        // dd($purchase);
+        return view('backend.page.purchase.purchase_view',compact('purchase'));
+    }
+
+
     public function tender (){
         $vendor=Vendor::all();
         return view ('backend.page.purchase.tender',compact('vendor'));

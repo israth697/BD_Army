@@ -14,6 +14,13 @@ class soildersController extends Controller
         $soilder=Soilder::with('rank')->paginate(5);
         return view ('backend.page.soilders.soilders',compact('soilder'));
     }
+     
+    public function soilders_view ($id){
+        $soilder=Soilder::find($id);
+
+        // dd($soilder);
+        return view('backend.page.soilders.soilder_view',compact('soilder'));
+    }
 
     public function create (){
         $rank=Rank::all();

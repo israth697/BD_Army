@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,8 @@ class UserController extends Controller
 {
     public function login() 
     {
-        return view('backend.page.login.login');
+        Toastr::success('login sucess.');
+        return view('backend.page.login.login')->with('msg', 'Login success.');
     }
     public function doLogin(Request $request)
     {
@@ -49,7 +51,8 @@ class UserController extends Controller
         // auth()->logout();
         Auth::logout();
 
-        return redirect()->route('admin.login');
+        Toastr::success('login sucess.');
+        return redirect()->route('admin.login')->with('msg', 'Login success.');
     }
 
     public function profile()

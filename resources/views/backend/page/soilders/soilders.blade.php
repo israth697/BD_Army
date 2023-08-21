@@ -39,6 +39,7 @@
       <td>{{$item->status}}</td>
    
 <td>
+<a class="btn btn-info" href="{{route('soilders.view',$item->id)}}">View</a>
 <a class="btn btn-warning" href="">Update</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>

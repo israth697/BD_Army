@@ -30,7 +30,8 @@
       
    
 <td>
-<a class="btn btn-warning" href="{{route('Armstype.edit',$item->id)}}">Edit</a>
+<a class="btn btn-primary" href="{{route('armstype.view',$item->id)}}">View</a>
+<a class="btn btn-warning" href="">Edit</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>
 </tr>

@@ -11,6 +11,13 @@ class ArmstypeController extends Controller
         $armstype=Armstypes::paginate(5);
         return view ('backend.page.armstype.Armstype',compact('armstype'));
     }
+
+    public function arms_view ($id){
+        $armstype=Armstypes::find($id);
+        // dd($armstype);
+        return view('backend.page.armstype.type_view',compact('armstype'));
+    }
+
     public function submit (){
         return view('backend.page.armstype.submit');
     }

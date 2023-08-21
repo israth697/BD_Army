@@ -32,6 +32,8 @@
       
    
 <td>
+
+<a class="btn btn-info" href="{{route('tender.view',$item->id)}}">View</a>
 <a class="btn btn-warning" href="">Update</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>

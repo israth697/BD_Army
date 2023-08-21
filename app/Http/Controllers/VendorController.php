@@ -11,6 +11,13 @@ class VendorController extends Controller
         $vendor=Vendor::paginate(5);
         return view ('backend.page.vendor.vendor',compact('vendor'));
     }
+
+    public function vendor_view ($id){
+        $vendor=Vendor::find($id);
+        // dd($vendor);
+        return view('backend.page.vendor.vendor_view',compact('vendor'));
+    }
+
     public function vendordetails (){
         return view ('backend.page.vendor.vendordetails');
     }

@@ -46,10 +46,9 @@ Route::get('/',[DashboardController::class,'dashboard']) ->name('dashboard');
 Route::get('/idea',[DashboardController::class,'accept']) ->name('accept');
 
 Route::get('/type',[ArmstypeController::class,'Armstype']) ->name('Armstype');
+Route::get('/type/view/{id}',[ArmstypeController::class,'arms_view']) ->name('armstype.view');
 Route::get('/type-create',[ArmstypeController::class,'submit']) ->name('submit');
 Route::post('/type-store',[ArmstypeController::class,'store']) ->name('Armstype.store');
-Route::get('/type-edit/{id}',[ArmstypeController::class,'edit_type']) ->name('Armstype.edit');
-Route::post('/type-update/{id}',[ArmstypeController::class,'update_type']) ->name('Armstype.update');
 
 Route::get('/setup',[ArmsetupController::class,'Armsetup']) ->name('Armsetup');
 Route::get('/setup-bot',[ArmsetupController::class,'agree']) ->name('agree');
@@ -59,11 +58,13 @@ Route::post('arms_setup/update/{id}',[ArmsetupController::class,'setup_update'])
 
 
 Route::get('/money',[PurchaseController::class,'Purchase']) ->name('Purchase');
+Route::get('/money/view/{id}',[PurchaseController::class,'tender_view']) ->name('tender.view');
 Route::get('/money-bot',[PurchaseController::class,'tender']) ->name('tender');
 Route::post('/money-store',[PurchaseController::class,'store']) ->name('Purchase.store');
 
 
 Route::get('/soilders',[soildersController::class,'soilders']) ->name('soilders.list');
+Route::get('/soilders/view/{id}',[soildersController::class,'soilders_view']) ->name('soilders.view');
 Route::get('/soilders-create',[soildersController::class,'create']) ->name('soilders.create');
 Route::post('/soilders-store',[soildersController::class,'store']) ->name('soilders.store');
 
@@ -78,11 +79,13 @@ Route::get('/position-delete/{id}',[RankController::class,'delete']) ->name('ran
 
 
 Route::get('/permission',[OfficerController::class,'officer']) ->name('officer.permit');
+Route::get('/firing/view/{id}',[OfficerController::class,'officer_view']) ->name('officer.view');
 Route::get('/firing',[OfficerController::class,'fire']) ->name('officer.fire');
 Route::post('/permission-store',[OfficerController::class,'store']) ->name('officer.store');
 
 
 Route::get('/arms',[DamageController::class,'damagestock']) ->name('damage.stock');
+Route::get('/arms/view/{id}',[DamageController::class,'damage_view']) ->name('damage.view');
 Route::get('/arm',[DamageController::class,'search']) ->name('damage.search');
 Route::post('/arms-stock',[DamageController::class,'store']) ->name('damage.store');
 
@@ -94,6 +97,7 @@ Route::post('/weapon-store',[StockController::class,'store']) ->name('weapon.sto
 
 
 Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply');
+Route::get('/supply/view/{id}',[VendorController::class,'vendor_view']) ->name('vendor.view');
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
 

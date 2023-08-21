@@ -13,6 +13,13 @@ class DamageController extends Controller
         $damagestock=Damagestock::with('armstype')->paginate(5);
         return view ('backend.page.damagestock.damagestock',compact('damagestock'));
     }
+
+    public function damage_view ($id){
+        $damagestock=Damagestock::find($id);
+        // dd($rank);
+        return view('backend.page.damagestock.damage_view',compact('damagestock'));
+    }
+
     public function search (){
         $armstype=Armstypes::all();
         return view ('backend.page.damagestock.search',compact('armstype'));

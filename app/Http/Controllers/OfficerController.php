@@ -13,6 +13,13 @@ class OfficerController extends Controller
         return view ('backend.page.officer.officer',compact('officer'));
     }
 
+    public function officer_view($id){
+        $officer=Officer::find($id);
+
+        // dd($officer);
+        return view('backend.page.officer.officer_view',compact('officer'));
+    }
+
     public function fire (){
         $rank=Rank::all();
         return view ('backend.page.officer.fire',compact('rank'));
