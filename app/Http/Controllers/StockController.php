@@ -42,5 +42,11 @@ class StockController extends Controller
         return to_route('weapon.stock')->with('msg','Data store Successfully');
 
     }
+    public function delete($id){
+        $stock=Stock::find($id);
+
+        $stock->delete();
+        return to_route('weapon.stock');
+    }
 
 }

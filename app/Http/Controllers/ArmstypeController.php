@@ -76,4 +76,11 @@ class ArmstypeController extends Controller
 
         return to_route('Armstype');
     }
+
+    public function delete($id){
+        $armstype=Armstypes::find($id);
+
+        $armstype->delete();
+        return to_route('Armstype');
+    }
 }

@@ -35,7 +35,7 @@
 
 <a class="btn btn-info" href="{{route('tender.view',$item->id)}}">View</a>
 <a class="btn btn-warning" href="">Update</a>
-<a class="btn btn-danger" href="">Delete</a>
+<a class="btn btn-danger" href="{{route('Purchase.delete',$item->id)}}">Delete</a>
 </td>
 </tr>
     @endforeach

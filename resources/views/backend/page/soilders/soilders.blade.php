@@ -41,7 +41,7 @@
 <td>
 <a class="btn btn-info" href="{{route('soilders.view',$item->id)}}">View</a>
 <a class="btn btn-warning" href="">Update</a>
-<a class="btn btn-danger" href="">Delete</a>
+<a class="btn btn-danger" href="{{route('soilders.delete',$item->id)}}">Delete</a>
 </td>
 </tr>
     @endforeach

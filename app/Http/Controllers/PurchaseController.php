@@ -49,5 +49,12 @@ class PurchaseController extends Controller
 
     }
 
+    public function delete($id){
+        $purchase=Purchase::find($id);
+
+        $purchase->delete();
+        return to_route('Purchase');
+    }
+
     
 }

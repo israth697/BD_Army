@@ -63,5 +63,12 @@ class ArmsetupController extends Controller
 
 
         }
+
+        public function delete($id){
+            $armsetup=Armsetups::find($id);
+    
+            $armsetup->delete();
+            return to_route('Armsetup');
+        }
 }
 

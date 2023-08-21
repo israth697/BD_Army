@@ -31,7 +31,7 @@
    
 <td>
 <a class="btn btn-warning" href="{{route('arms.setup.edit',$item->id)}}">Edit</a>
-<a class="btn btn-danger" href="">Delete</a>
+<a class="btn btn-danger" href="{{route('arms.setup.delete',$item->id)}}">Delete</a>
 </td>
 </tr>
     @endforeach

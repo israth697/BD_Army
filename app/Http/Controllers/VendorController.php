@@ -40,4 +40,10 @@ class VendorController extends Controller
         return to_route('vendor.supply')->with('msg','Data store Successfully');
 
     }
+    public function delete($id){
+        $vendor=Vendor::find($id);
+
+        $vendor->delete();
+        return to_route('vendor.supply');
+    }
 }

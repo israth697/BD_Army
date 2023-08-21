@@ -79,6 +79,11 @@ class DamageController extends Controller
 
     }
 
+    public function delete($id){
+        $damagestock=Damagestock::find($id);
 
+        $damagestock->delete();
+        return to_route('damage.stock');
+    }
 
 }

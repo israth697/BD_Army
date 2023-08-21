@@ -29,11 +29,10 @@
 <td>
 <a class="btn btn-info" href="{{route('damage.view',$item->id)}}">View</a>
 <a class="btn btn-warning" href="">Update</a>
-<a class="btn btn-danger" href="">Delete</a>
+<a class="btn btn-danger" href="{{route('damage.delete',$item->id)}}">Delete</a>
 </td>
 </tr>
     @endforeach
-    
     
   </tbody>
 </table>

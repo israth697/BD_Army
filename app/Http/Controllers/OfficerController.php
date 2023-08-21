@@ -44,6 +44,12 @@ class OfficerController extends Controller
 
         ]);
         return to_route('officer.permit')->with('msg','Data store Successfully');
+    }
 
+    public function delete($id){
+        $officer=Officer::find($id);
+
+        $officer->delete();
+        return to_route('officer.permit');
     }
 }
