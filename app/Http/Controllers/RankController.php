@@ -6,7 +6,8 @@ use App\Models\Rank;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class RankController extends Controller{
+class 
+RankController extends Controller{
 
     public function rank()
     {
