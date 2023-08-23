@@ -55,14 +55,7 @@
             <span class="data-label">Arms Item Quantity:</span>
             <span class="data-value">{{$stock->type_quantity}}</span>
         </div>
-        <div class="data-item">
-            <span class="data-label">Arms Setup Name:</span>
-            <span class="data-value">{{$stock->armsetup->name}}</span>
-        </div>
-        <div class="data-item">
-            <span class="data-label">Arms Setup Quantity:</span>
-            <span class="data-value">{{$stock->setup_quantity}}</span>
-        </div>
+        
         <div class="data-item">
             <span class="data-label">Status:</span>
             <span class="data-value">{{$stock->status}}</span>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Armstypes;
 use App\Models\Rank;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -11,9 +12,10 @@ RankController extends Controller{
 
     public function rank()
     {
-        $rank=Rank::paginate(5);
-        return view ('backend.page.rank.rank',compact('rank'));
+        $rank=Rank::with('armstype')->paginate(5);
+        return view ('backend.page.rank.rankM',compact('rank'));
     }
+    
     public function rank_view($id){
         $rank=Rank::find($id);
         // dd($rank);
@@ -21,12 +23,16 @@ RankController extends Controller{
     }
 
     public function post (){
-    return view('backend.page.rank.post');
+        $armstype=Armstypes::all();
+    //     return view ('backend.page.damagestock.search',compact('armstype'));
+    // return view('backend.page.rank.post');
+        return view('backend.page.rank.post',compact('armstype'));
     }
     
     public function store(Request $request){
         $request->validate([
             'name'=>'required',
+            'armstype_id'=>'required',
             'image'=>'required',
         ]);
         //  dd($request->all());
@@ -42,6 +48,8 @@ RankController extends Controller{
             // database column name=>$request->input field name
             'image'=>$fileName,
             'name'=>$request->name,
+            
+            'armstype_id'=>$request->armstype_id,
 
         ]);
         return to_route('rank.list')->with('msg','Data store Successfully');

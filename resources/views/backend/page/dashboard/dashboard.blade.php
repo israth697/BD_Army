@@ -8,26 +8,7 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Arms Item</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('Armstype')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                    <h6>{{$armstype}} </h6>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Arms Setup</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('Armsetup')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                    <h6>{{$armsetup}} </h6>
-                                </div>
-                            </div>
+                            
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Authorise Officer</div>
@@ -38,6 +19,7 @@
                                     <h6>{{$officer}}</h6>
                                 </div>
                             </div>
+
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Damage Stock</div>
@@ -48,6 +30,31 @@
                                     <h6>{{$damagestock}}</h6>
                                 </div>
                             </div>
+                            
+                            @if (auth()->user()->role !='commander' && auth()->user()->role !='dutyofficer')
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-dark text-white mb-4">
+                                    <div class="card-body">Soilder</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="{{route('soilders.list')}}">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <h6>{{$soilder}}</h6>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">Vendor</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="{{route('vendor.supply')}}">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <h6>{{$vendor}}</h6>
+                                </div>
+                            </div>
+
+                            
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-secondary text-white mb-4">
@@ -72,16 +79,28 @@
                             </div>
 
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-dark text-white mb-4">
-                                    <div class="card-body">Soilder</div>
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Arms Item</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="{{route('soilders.list')}}">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{route('Armstype')}}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
-                                    <h6>{{$damagestock}}</h6>
+                                    <h6>{{$armstype}} </h6>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">Arms Setup</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="{{route('Armsetup')}}">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <h6>{{$armsetup}} </h6>
                                 </div>
                             </div>
 
+
+                             @endif
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Stock</div>
@@ -93,16 +112,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Vendor</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('vendor.supply')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                    <h6>{{$vendor}}</h6>
-                                </div>
-                            </div>
+                            
                             
                         </div>
                         

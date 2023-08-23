@@ -55,6 +55,8 @@
                     <td>{{$item->contact}}</td>
                     <td>{{$item->address}}</td>
                     <td>{{$item->details}}</td>
+                    <td>{{$item->vendor->name}}</td>
+                    <td>{{$item->action}}</td>
                 </tr>
                 @endforeach
                 @endif

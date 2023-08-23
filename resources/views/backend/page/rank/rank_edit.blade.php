@@ -22,6 +22,10 @@
     <label for="">Rank Name</label>
     <input type="name" name="name" value="{{$rank->name}}" class="form-control" id=""  placeholder="rank name">
   </div><br>
+  <!-- <div class="form-group">
+    <label for="">Arms Item</label>
+    <input type="armstype_id" name="armstype_id" value="{{$rank->armstype}}" class="form-control" id=""  placeholder="Arms type name">
+  </div><br> -->
   <div class="form-group">
   <label for="">Rank Status</label>
   <select class="form-select" value="{{$rank->status}}" name="status" aria-label="Default select example">

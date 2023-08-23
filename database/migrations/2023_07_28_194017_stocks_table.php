@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('status')->default('Active'); 
             $table->integer('type_quantity');
             $table->foreignId('armstype_id')->constrained('armstypes')->cascadeOnDelete(); 
-            $table->integer('setup_quantity');
-            $table->foreignId('armsetup_id')->constrained('armsetups')->cascadeOnDelete();
+           
             $table->timestamps();
         });
     }

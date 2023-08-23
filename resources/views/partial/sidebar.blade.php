@@ -36,8 +36,8 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Report
                             </a>
-                             @endif
-
+                        @endif
+                            
                             @if(auth()->user()->role =='admin' ||auth()->user()->role =='commander' || auth()->user()->role =='dutyofficer' )
                             <a class="nav-link" href="{{route('officer.permit')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>

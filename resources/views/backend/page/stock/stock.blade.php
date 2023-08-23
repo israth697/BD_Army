@@ -13,8 +13,7 @@
       <th scope="col">ID</th>
       <th scope="col">Arms Item Name</th>
       <th scope="col">Item Quantity</th>
-      <th scope="col">Arms Setup Name</th>
-      <th scope="col">Setup Quantity</th>
+     
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -25,8 +24,8 @@
       <th scope="row">{{$key+1}}</th>
       <td>{{$item->armstype->name}}</td>
       <td>{{$item->type_quantity}}</td>
-      <td>{{$item->armsetup->name}}</td>
-      <td>{{$item->setup_quantity}}</td>
+      
+      
       <td>{{$item->status}}</td>
    
 <td>

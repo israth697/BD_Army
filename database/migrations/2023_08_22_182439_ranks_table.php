@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
-            $table->string('image'); 
+            $table->string('image')->unique(); 
             $table->string('name');  
+            $table->foreignId('armstype_id')->constrained('armstypes')->cascadeOnDelete(); 
             $table->string('status')->default('Active');         
             $table->timestamps();
         });
