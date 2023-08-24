@@ -46,7 +46,8 @@ class ArmstypeController extends Controller
             // database column name=>$request->input field name
             'name'=>$request->name,
             'description'=>$request->description,
-            'image'=>$fileName
+            'image'=>$fileName,
+            'status'=>$request->status,
             
             
         
@@ -55,25 +56,22 @@ class ArmstypeController extends Controller
 
     }
 
-    public function edit_type($id) 
+    public function edit($id){
+        $armstype=Armstypes::find($id);
+        return view('backend.page.armstype.edit_armstype',compact('armstype'));
+    }
+
+    public function update(Request $request,$id)
     {
         $armstype=Armstypes::find($id);
-        return view ('backend.page.armstype.editarmstype',compact('armstype')); 
-    }
         
-    public function update_type(Request $request,$id)
-    {
-        $armstype=Armstypes::findOrFail($id);
-        $request->validate([
-            'name'=>'required',
-            'description'=>'required',
-         ]);
-
         $armstype->update([
+
             'name'=>$request->name,
             'description'=>$request->description,
+            // 'image'=>$fileName
+            
         ]);
-
         return to_route('Armstype');
     }
 

@@ -1,9 +1,8 @@
 @extends('backend.master')
 @section('content')
-
 <div class="container">
-  <h2>Soilders Information</h2>
-<form action="{{route('soilders.store')}}" method="post" enctype="multipart/form-data">
+  <h2>Rank Details</h2><br>
+<form action="{{route('soilders.update',$soilder->id)}}" method="post" enctype="multipart/form-data">
 @if($errors->any())
         @foreach($errors->all() as $error)
           <p class="alert alert-danger">{{$error}}</p>
@@ -15,54 +14,38 @@
     @endif
   @csrf
   <div class="form-group">
-    <label for="">Id_Number</label>
-    <input type="id_number" name="id_number" class="form-control" id=""  placeholder="Enter your identity">
-  </div>
+    <label for="">Soilder Image</label><br>
+    <img style="height: 90px;width:60px" src="{{url('/uploads/',$soilder->image)}}" alt="">
+    <input type="file" name="image" class="form-control" id=""  placeholder="upload the image">
+  </div><br>
   <div class="form-group">
-    <label for="">Name</label>
-    <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">
-  </div>
+    <label for="">Soilder ID</label>
+    <input type="id_number" name="id_number" value="{{$soilder->id}}" class="form-control" id=""  placeholder="soilder ID">
+  </div><br>
   <div class="form-group">
-    <label for="">Soilder Image</label>
-    <input type="file" name="image" class="form-control" id=""  placeholder="upload your image">
-  </div>
+    <label for="">Soilder Name</label>
+    <input type="name" name="name" value="{{$soilder->name}}" class="form-control" id=""  placeholder="soilder name">
+  </div><br>
   <div class="form-group">
-    <label for="">Email</label>
-    <input type="email" name="email" class="form-control" id=""  placeholder="Enter email">
-  </div>
-  <br>
-  <div>
-  <label for="">Rank</label>
-  <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
-  <option selected>Open this select menu </option>
-  @foreach ($rank as $item )
-  <option  value="{{$item->id}}">{{$item->name}}</option>
-  @endforeach
+    <label for="">Soilder Email</label>
+    <input type="email" name="email" value="{{$soilder->email}}" class="form-control" id=""  placeholder="soilder email">
+  </div><br>
+  <div class="form-group">
+    <label for="">Soilder Contact</label>
+    <input type="tel" name="contact" value="{{$soilder->Contact}}" class="form-control" id=""  placeholder="soilder Contact">
+  </div><br>
+  <div class="form-group">
+    <label for="">Soilder Address</label>
+    <input type="text" name="address" value="{{$soilder->address}}" class="form-control" id=""  placeholder="soilder Address">
+  </div><br>
+  <div class="form-group">
+  <label for="">Soilders Status</label>
+  <select class="form-select" value="{{$soilder->status}}" name="status" aria-label="Default select example">
+<option value="Active">Active</option>
+<option value="Inactive">Inactive</option>
 </select>
-  </div>
-  <br>
-  <div class="form-group">
-    <label for="">Corps</label>
-    <select class="form-select" name="corps" aria-label="Default select example">
-  <option selected>Selete the crops category</option>
-  <option value="Signal">Signal</option>
-  <option value="Education">Education</option>
-  <option value="Engineer">Engineer</option>
-  <option value="Medical">Medical</option>
-  <option value="Architecture">Architecture</option>
-  <option value="Training Officer">Training Officer</option>
-</select>
-  </div>
-  <div class="form-group">
-    <label for="">Contact</label>
-    <input type="tel" name="contact" class="form-control" id=""  placeholder="Enter contact">
-  </div>
-  <div class="form-group">
-    <label for="">Address</label>
-    <input type="text" name="address" class="form-control" id=""  placeholder="Enter address">
-  </div>
-<br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+ </div><br>
+ <button type="submit" class="btn btn-primary">Update</button>
 </form>
 </div>
 

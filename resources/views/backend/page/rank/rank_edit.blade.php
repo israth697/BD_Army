@@ -31,9 +31,8 @@
   <select class="form-select" value="{{$rank->status}}" name="status" aria-label="Default select example">
 <option value="Active">Active</option>
 <option value="Inactive">Inactive</option>
-</select>
- </div>
-<br>
+</select>`  
+ </div><br>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
 </div>

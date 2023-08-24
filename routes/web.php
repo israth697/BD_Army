@@ -50,13 +50,15 @@ Route::get('/type',[ArmstypeController::class,'Armstype']) ->name('Armstype');
 Route::get('/type/view/{id}',[ArmstypeController::class,'arms_view']) ->name('armstype.view');
 Route::get('/type-create',[ArmstypeController::class,'submit']) ->name('submit');
 Route::post('/type-store',[ArmstypeController::class,'store']) ->name('Armstype.store');
+Route::get('type/edit/{id}',[ArmstypeController::class,'edit'])->name('Armstype.edit');
+Route::post('type/update/{id}',[ArmstypeController::class,'update'])->name('Armstype.update');
 Route::get('/type-delete/{id}',[ArmstypeController::class,'delete']) ->name('Armstype.delete');
 
 Route::get('/setup',[ArmsetupController::class,'Armsetup']) ->name('Armsetup');
 Route::get('/setup-bot',[ArmsetupController::class,'agree']) ->name('agree');
 Route::post('/setup-store',[ArmsetupController::class,'store']) ->name('Armsetup.store');
-Route::get('arms_setup/edit/{id}',[ArmsetupController::class,'setup_edit'])->name('arms.setup.edit');
-Route::post('arms_setup/update/{id}',[ArmsetupController::class,'setup_update'])->name('arms.setup.update');
+Route::get('arms_setup/edit/{id}',[ArmsetupController::class,'edit'])->name('arms.setup.edit');
+Route::post('arms_setup/update/{id}',[ArmsetupController::class,'update'])->name('arms.setup.update');
 Route::get('/arms_setup-delete/{id}',[ArmsetupController::class,'delete']) ->name('arms.setup.delete');
 
 
@@ -64,6 +66,8 @@ Route::get('/money',[PurchaseController::class,'Purchase']) ->name('Purchase');
 Route::get('/money/view/{id}',[PurchaseController::class,'tender_view']) ->name('tender.view');
 Route::get('/money-bot',[PurchaseController::class,'tender']) ->name('tender');
 Route::post('/money-store',[PurchaseController::class,'store']) ->name('Purchase.store');
+Route::get('/money-edit/{id}',[PurchaseController::class,'edit']) ->name('Purchase.edit');
+Route::post('/money-update/{id}',[PurchaseController::class,'update']) ->name('Purchase.update');
 Route::get('/money-delete/{id}',[PurchaseController::class,'delete']) ->name('Purchase.delete');
 
 Route::get('/soilders',[soildersController::class,'soilders']) ->name('soilders.list');
@@ -87,6 +91,8 @@ Route::get('/permission',[OfficerController::class,'officer']) ->name('officer.p
 Route::get('/firing/view/{id}',[OfficerController::class,'officer_view']) ->name('officer.view');
 Route::get('/firing',[OfficerController::class,'fire']) ->name('officer.fire');
 Route::post('/permission-store',[OfficerController::class,'store']) ->name('officer.store');
+Route::get('firing/edit/{id}',[OfficerController::class,'edit'])->name('officer.edit');
+Route::post('firing/update/{id}',[OfficerController::class,'update'])->name('officer.update');
 Route::get('/permission-delete/{id}',[OfficerController::class,'delete']) ->name('officer.delete');
 
 Route::get('/arms',[DamageController::class,'damagestock']) ->name('damage.stock');
@@ -106,6 +112,8 @@ Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply')
 Route::get('/supply/view/{id}',[VendorController::class,'vendor_view']) ->name('vendor.view');
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
+// Route::get('type/edit/{id}',[ArmstypeController::class,'edit'])->name('Armstype.edit');
+// Route::post('type/update/{id}',[ArmstypeController::class,'update'])->name('Armstype.update');
 Route::get('/supply-delete/{id}',[VendorController::class,'delete']) ->name('vendor.delete');
 
 Route::get('/money-report',[ReportController::class,'tender_report']) ->name('tender.Report');

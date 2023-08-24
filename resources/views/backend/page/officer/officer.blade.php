@@ -31,7 +31,7 @@
    
 <td>
 <a class="btn btn-info" href="{{route('officer.view',$item->id)}}">View</a>
-<a class="btn btn-warning" href="">Update</a>
+<a class="btn btn-warning" href="{{route('officer.edit',$item->id)}}">Update</a>
 <a class="btn btn-danger" href="{{route('officer.delete',$item->id)}}">Delete</a>
 </td>
 </tr>

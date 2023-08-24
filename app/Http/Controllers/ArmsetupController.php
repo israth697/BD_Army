@@ -49,19 +49,25 @@ class ArmsetupController extends Controller
     
         }
 
-        public function setup_edit($id){
-            // $armstype=Armstypes::all();
-            // dd($armstype);
-    
+        public function edit($id){
             $armsetup=Armsetups::find($id);
             return view('backend.page.armsetup.edit_setup',compact('armsetup'));
         }
-
-        public function setup_update(Request $request,$id){
-            dd($request->all());
+    
+        public function update(Request $request,$id)
+        {
             $armsetup=Armsetups::find($id);
+            
+            $armsetup->update([
+    
+                'name'=>$request->name,
+                'specification'=>$request->specification,
+                // 'image'=>$fileName,
+                 'status'=>$request->status,
 
-
+                 
+            ]);
+            return to_route('Armsetup');
         }
 
         public function delete($id){
