@@ -32,7 +32,7 @@
   </div><br>
   <div class="form-group">
     <label for="">Soilder Contact</label>
-    <input type="tel" name="contact" value="{{$soilder->Contact}}" class="form-control" id=""  placeholder="soilder Contact">
+    <input type="tel" name="contact" value="{{$soilder->contact}}" class="form-control" id=""  placeholder="soilder Contact">
   </div><br>
   <div class="form-group">
     <label for="">Soilder Address</label>

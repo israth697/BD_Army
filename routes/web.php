@@ -112,8 +112,8 @@ Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply')
 Route::get('/supply/view/{id}',[VendorController::class,'vendor_view']) ->name('vendor.view');
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
-// Route::get('type/edit/{id}',[ArmstypeController::class,'edit'])->name('Armstype.edit');
-// Route::post('type/update/{id}',[ArmstypeController::class,'update'])->name('Armstype.update');
+Route::get('type/edit/{id}',[VendorController::class,'edit'])->name('vendor.edit');
+Route::post('type/update/{id}',[VendorController::class,'update'])->name('vendor.update');
 Route::get('/supply-delete/{id}',[VendorController::class,'delete']) ->name('vendor.delete');
 
 Route::get('/money-report',[ReportController::class,'tender_report']) ->name('tender.Report');

@@ -27,11 +27,11 @@
   </div><br>
   <div class="form-group">
     <label for="">Purchase Address</label>
-    <input type="text" name="address" value="{{$purchase->contact}}" class="form-control" id=""  placeholder="purchase address">
+    <input type="text" name="address" value="{{$purchase->address}}" class="form-control" id=""  placeholder="purchase address">
   </div><br>
   <div class="form-group">
     <label for="">Purchase Details</label>
-    <input type="text" name="details" value="{{$purchase->contact}}" class="form-control" id=""  placeholder="purchase details">
+    <input type="text" name="details" value="{{$purchase->details}}" class="form-control" id=""  placeholder="purchase details">
   </div><br>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>

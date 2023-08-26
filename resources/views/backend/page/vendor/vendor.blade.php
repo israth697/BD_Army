@@ -29,7 +29,7 @@
    
 <td>
 <a class="btn btn-info" href="{{route('vendor.view',$item->id)}}">View</a>
-<a class="btn btn-warning" href="">Update</a>
+<a class="btn btn-warning" href="{{route('vendor.edit',$item->id)}}">Update</a>
 <a class="btn btn-danger" href="{{route('vendor.delete',$item->id)}}">Delete</a>
 </td>
 </tr>

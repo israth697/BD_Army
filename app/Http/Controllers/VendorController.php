@@ -40,6 +40,28 @@ class VendorController extends Controller
         return to_route('vendor.supply')->with('msg','Data store Successfully');
 
     }
+
+    public function edit($id){
+        $vendor=Vendor::find($id);
+        return view('backend.page.vendor.vendor_edit',compact('vendor'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $vendor=Vendor::find($id);
+        
+        $vendor->update([
+
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'contact'=>$request->contact,
+            'address'=>$request->address,
+
+            
+        ]);
+        return to_route('vendor.supply');
+    }
+
     public function delete($id){
         $vendor=Vendor::find($id);
 
