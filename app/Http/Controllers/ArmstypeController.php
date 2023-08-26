@@ -47,7 +47,6 @@ class ArmstypeController extends Controller
             'name'=>$request->name,
             'description'=>$request->description,
             'image'=>$fileName,
-            'status'=>$request->status,
             
             
         
