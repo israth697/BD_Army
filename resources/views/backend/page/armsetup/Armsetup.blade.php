@@ -3,7 +3,7 @@
 <div class="container">
     <h2>Arms Setup</h2>
     <br>
-    <a class="btn btn-success" href="{{route('agree')}}">Create</a>
+    <a class="btn btn-success" href="{{route('agree')}}">Add New Arms Setup</a>
  <br>
 <table class="table">
   <thead>

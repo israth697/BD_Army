@@ -11,6 +11,7 @@ use App\Models\Rank;
 use App\Models\Soilder;
 use App\Models\Stock;
 use App\Models\Vendor;
+
 use Illuminate\Http\Request;
 
 
@@ -27,6 +28,7 @@ class DashboardController extends Controller
         $soilder=Soilder::all()->count();
         $stock=Stock::all()->count();
         $vendor=Vendor::all()->count();
+        
 
 
     return view ('backend.page.dashboard.dashboard',compact('armsetup','armstype','damagestock','officer','purchase','rank','soilder','stock','vendor'));

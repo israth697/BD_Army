@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Soilders List</h2>
     <br>
-    <a class="btn btn-success" href="{{route('soilders.create')}}">Create</a>
+    <a class="btn btn-success" href="{{route('soilders.create')}}">Add New Soilders</a>
  <br>
 <table class="table">
   <thead>

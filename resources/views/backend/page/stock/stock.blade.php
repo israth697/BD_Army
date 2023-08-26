@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Arms Stock</h2>
     <br>
-    <a class="btn btn-success" href="{{route('weapon.collection')}}">Create</a>
+    <a class="btn btn-success" href="{{route('weapon.collection')}}">Update Stock</a>
     <br>
 
 <table class="table">

@@ -64,7 +64,7 @@
         </table>
     </div>
     <br>
-    <button onclick="printDiv('orderReport')" class="btn btn-success ">Print</button>
+    <button onclick="printDiv('orderReport')" class="btn btn-primary ">Print</button>
 </div>
 
     <script>

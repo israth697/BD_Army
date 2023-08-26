@@ -67,6 +67,8 @@
                                 </div>
                             </div>
 
+                            
+
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
                                     <div class="card-body">Rank</div>

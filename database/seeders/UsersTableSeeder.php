@@ -13,11 +13,11 @@ class UserTableSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name'=>'Admin',
-            'email'=>'admin@gmail.com',
-            'password'=>bcrypt('123456')
-        ]);
+        // User::create([
+        //     'name'=>'Admin',
+        //     'email'=>'admin@gmail.com',
+        //     'password'=>bcrypt('123456')
+        // ]);
 
         // User::create([
         //     'name'=>'Commander',
@@ -26,11 +26,11 @@ class UserTableSeeder extends Seeder
         //     'password'=>bcrypt('123456')
         // ]);
 
-        // User::create([
-        //     'name'=>'DutyOfficer',
-        //     'role'=>'dutyofficer',
-        //     'email'=>'dutyofficer@gmail.com',
-        //     'password'=>bcrypt('123456')
-        // ]);
+        User::create([
+            'name'=>'DutyOfficer',
+            'role'=>'dutyofficer',
+            'email'=>'dutyofficer@gmail.com',
+            'password'=>bcrypt('123456')
+        ]);
     }
 }

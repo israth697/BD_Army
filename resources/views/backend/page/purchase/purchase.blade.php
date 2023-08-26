@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Purchase</h2>
     <br>
-    <a class="btn btn-success" href="{{route('tender')}}">Create</a>
+    <a class="btn btn-success" href="{{route('tender')}}">Add Purchase Details</a>
  <br>
 <table class="table">
   <thead>

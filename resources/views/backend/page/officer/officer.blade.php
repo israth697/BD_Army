@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Officer Command</h2>
     <br>
-    <a class="btn btn-success" href="{{route('officer.fire')}}">Create</a>
+    <a class="btn btn-success" href="{{route('officer.fire')}}">Give Firing Notice</a>
  <br>
 <table class="table">
   <thead>

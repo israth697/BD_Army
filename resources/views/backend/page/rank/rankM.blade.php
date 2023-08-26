@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Rank</h2>
     <br>
-    <a class="btn btn-success" href="{{route('rank.post')}}">Create</a>
+    <a class="btn btn-success" href="{{route('rank.post')}}">Add New rank</a>
  <br>
 <table class="table">
   <thead>

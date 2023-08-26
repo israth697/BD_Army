@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Arms Item</h2>
     <br>
-    <a class="btn btn-success" href="{{route('submit')}}">Create</a>
+    <a class="btn btn-success" href="{{route('submit')}}">Add New Arms Item</a>
  <br>
 <table class="table">
   <thead>
