@@ -46,13 +46,13 @@ Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 Route::get('/',[DashboardController::class,'dashboard']) ->name('dashboard');
 Route::get('/idea',[DashboardController::class,'accept']) ->name('accept');
 
-Route::get('/type',[ArmstypeController::class,'Armstype']) ->name('Armstype');
-Route::get('/type/view/{id}',[ArmstypeController::class,'arms_view']) ->name('armstype.view');
-Route::get('/type-create',[ArmstypeController::class,'submit']) ->name('submit');
-Route::post('/type-store',[ArmstypeController::class,'store']) ->name('Armstype.store');
-Route::get('type/edit/{id}',[ArmstypeController::class,'edit'])->name('Armstype.edit');
+Route::get('/type',[ArmstypeController::class,'Armstype'])->name('Armstype');
+Route::get('/type/view/{id}',[ArmstypeController::class,'arms_view'])->name('armstype.view');
+Route::get('/type-create',[ArmstypeController::class,'submit'])->name('submit');
+Route::post('/type-store',[ArmstypeController::class,'store'])->name('Armstype.store');
+Route::get('type/edit/{id}',[ArmstypeController::class,'edit'])->name('armstype.edit');
 Route::post('type/update/{id}',[ArmstypeController::class,'update'])->name('Armstype.update');
-Route::get('/type-delete/{id}',[ArmstypeController::class,'delete']) ->name('Armstype.delete');
+Route::get('/type-delete/{id}',[ArmstypeController::class,'delete'])->name('Armstype.delete');
 
 Route::get('/setup',[ArmsetupController::class,'Armsetup']) ->name('Armsetup');
 Route::get('/setup-bot',[ArmsetupController::class,'agree']) ->name('agree');
@@ -112,8 +112,8 @@ Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply')
 Route::get('/supply/view/{id}',[VendorController::class,'vendor_view']) ->name('vendor.view');
 Route::get('/supply-list',[VendorController::class,'vendordetails']) ->name('vendor.list');
 Route::post('/supply-store',[VendorController::class,'store']) ->name('vendor.store');
-Route::get('type/edit/{id}',[VendorController::class,'edit'])->name('vendor.edit');
-Route::post('type/update/{id}',[VendorController::class,'update'])->name('vendor.update');
+Route::get('supply/edit/{id}',[VendorController::class,'edit'])->name('vendor.edit');
+Route::post('supply/update/{id}',[VendorController::class,'update'])->name('vendor.update');
 Route::get('/supply-delete/{id}',[VendorController::class,'delete']) ->name('vendor.delete');
 
 Route::get('/money-report',[ReportController::class,'tender_report']) ->name('tender.Report');
