@@ -59,11 +59,11 @@ class DamageController extends Controller
         }else{
             // no
 //stock not available
-            return redirect()->back();
+             return to_route('damage.stock');
         }
 
         //success
-        return redirect()->back();
+        return to_route('damage.stock');
 
           
          
@@ -79,11 +79,11 @@ class DamageController extends Controller
 
     }
 
-    public function delete($id){
-        $damagestock=Damagestock::find($id);
+    // public function delete($id){
+    //     $damagestock=Damagestock::find($id);
 
-        $damagestock->delete();
-        return to_route('damage.stock');
-    }
+    //     $damagestock->delete();
+    //     return to_route('damage.stock');
+    // }
 
 }
