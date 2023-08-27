@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Soilder;
 use App\Models\Rank;
-use Faker\Core\File;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 
 class soildersController extends Controller
@@ -69,28 +69,28 @@ class soildersController extends Controller
     public function update(Request $request,$id)
     {
         $soilder=Soilder::find($id);
-        // // dd($rank);
-        // // dd($request->all());
-        // $soilder_image = $soilder->image;
+        
+        // dd($soilder);
+        // dd($request->all());
+        $soilder_image = $soilder->image;
 
-        // // dd(public_path('images/mechanics/'.$mechanic_image));
-        // if ($image = $request->file('image')) {
-        //     if (file_exists(public_path('uploads/'.$soilder_image))) {
-        //         // Log::useFiles('path', 'level');
-        //         // File::delete($oldimage);
+        // dd(public_path('images/soilder/'.$soilder_image));
+        if ($image = $request->file('image')) {
+            if (file_exists(public_path('uploads/'.$soilder_image))) {
+                // Log::useFiles('path', 'level');
+                // File::delete($oldimage);
 
-                
-        //         File::delete(public_path('uploads/'.$soilder_image));
-        //     }
-        //     $rank_image = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
-        //     $image->move('uploads/', $rank_image);
-        // }
+                File::delete(public_path('uploads/'.$soilder_image));
+            }
+            $soilder_image = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $image->move('uploads/', $soilder_image);
+        }
         $soilder->update([
 
             'name'=>$request->name,
             'contact'=>$request->contact,
             'status'=>$request->status,
-            
+            'image'=>$soilder_image,
         ]);
         return to_route('soilders.list');
     }
