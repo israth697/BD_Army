@@ -14,4 +14,9 @@ class Purchase extends Model
     {
        return $this->belongsTo(Vendor::class,'vendor_id','id');
     }
+
+    public function armstype () 
+    {
+       return $this->belongsTo(Armstypes::class,'armstype_id','id');
+    }
 }

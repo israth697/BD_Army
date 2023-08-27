@@ -13,7 +13,7 @@
     <p class="alert alert-success">{{session()->get('message')}}</p>
     @endif
   @csrf
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="">Arms Name</label>
     <select class="form-select" name="name" aria-label="Default select example">
   <option selected>Selete the Arms Category</option>
@@ -40,7 +40,17 @@
   <option value="Dragunov sniper rifle">Dragunov sniper rifle</option>
   
 </select>
-  </div>
+  </div> -->
+
+  <br>
+  <select class="form-select" name="armstype_id" aria-label="amrrrrr mon">
+  <option selected>Select the Arms Type </option>
+  @foreach ($armstype as $item )
+  <option  value="{{$item->id}}">{{$item->name}}</option>
+  @endforeach
+</select>
+<br>
+
   <div class="form-group">
     <label for="">Quantity</label>
     <input type="number" name="quantity" class="form-control" id=""  placeholder="Enter quantity">

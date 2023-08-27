@@ -44,8 +44,8 @@
         <h2 class="mb-3" style="text-align: center">Purchase Information</h2>
         <hr>
         <div class="data-item">
-            <span class="data-label">Arms Name:</span>
-            <span class="data-value">{{$purchase->name}}</span>
+            <span class="data-label">Arms Item Name:</span>
+            <span class="data-value">{{$purchase->armstype->name}}</span>
         </div>
         <div class="data-item">
             <span class="data-label">Arms quantity:</span>

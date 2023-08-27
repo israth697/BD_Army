@@ -10,7 +10,7 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Arms Name</th>
+      <th scope="col">Arms Item Name</th>
       <th scope="col">Quantity of Arms</th>
       <th scope="col">Price</th>
       
@@ -22,7 +22,7 @@
     @foreach($purchase as $key=>$item)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <td>{{$item->name}}</td>
+      <td>{{$item->armstype->name}}</td>
       <td>{{$item->quantity}}</td>
       <td>{{$item->price}}</td>
       
@@ -32,7 +32,7 @@
 <td>
 
 <a class="btn btn-info" href="{{route('tender.view',$item->id)}}">View</a>
-<a class="btn btn-warning" href="{{route('Purchase.edit',$item->id)}}">Update</a>
+<!-- <a class="btn btn-warning" href="{{route('Purchase.edit',$item->id)}}">Update</a> -->
 <a class="btn btn-danger" href="{{route('Purchase.delete',$item->id)}}">Delete</a>
 </td>
 </tr>

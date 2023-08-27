@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Arms Item</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="{{route('Armstype')}}">View Details</a>
@@ -90,7 +90,7 @@
                                     <h6>{{$armstype}} </h6>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Arms Setup</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -99,7 +99,7 @@
                                     </div>
                                     <h6>{{$armsetup}} </h6>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                              @endif
