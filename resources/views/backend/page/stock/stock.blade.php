@@ -30,7 +30,7 @@
    
 <td>
 <a class="btn btn-info" href="{{route('stock.view',$item->id)}}">View</a>
-<!-- <a class="btn btn-warning" href="">Update</a> -->
+<!-- <a class="btn btn-warning" href="">Edit</a> -->
 <a class="btn btn-danger" href="{{route('weapon.delete',$item->id)}}">Delete</a>
 </td>
 </tr>

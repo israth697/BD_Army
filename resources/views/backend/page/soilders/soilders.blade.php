@@ -40,7 +40,7 @@
    
 <td>
 <a class="btn btn-info" href="{{route('soilders.view',$item->id)}}">View</a>
-<a class="btn btn-warning" href="{{route('soilders.edit',$item->id)}}">Update</a>
+<a class="btn btn-warning" href="{{route('soilders.edit',$item->id)}}">Edit</a>
 <a class="btn btn-danger" href="{{route('soilders.delete',$item->id)}}">Delete</a>
 </td>
 </tr>

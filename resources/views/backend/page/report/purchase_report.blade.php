@@ -35,7 +35,7 @@
         <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">ID</th>
+                <th scope="col">ID</th>             
       <th scope="col">Arms Name</th>
       <th scope="col">Quantity of Arms</th>
       <th scope="col">Price</th>
@@ -51,11 +51,11 @@
                 <tr>
                     <td>{{$key+1}}</td>
                     <th scope="row">{{$key+1}}</th>
-      <td>{{$item->name}}</td>
-      <td>{{$item->quantity}}</td>
-      <td>{{$item->price}}</td>
-    
-      <td>{{$item->vendor->name}}</td>
+                
+                    <td>{{$item->armstype->name}}</td>
+                    <td>{{$item->quantity}}</td>
+                    <td>{{$item->price}}</td>
+                    <td>{{$item->vendor->name}}</td>
       
                     
                 </tr>

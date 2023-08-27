@@ -45,7 +45,7 @@ Route::get('/search',[HomeController::class,'search'])->name('search');
 Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 
 Route::get('/',[DashboardController::class,'dashboard']) ->name('dashboard');
-Route::get('/idea',[DashboardController::class,'accept']) ->name('accept');
+
 
 Route::get('/type',[ArmstypeController::class,'Armstype'])->name('Armstype');
 Route::get('/type/view/{id}',[ArmstypeController::class,'arms_view'])->name('armstype.view');
@@ -113,7 +113,6 @@ Route::get('/divide',[distributorController::class,'distribution']) ->name('dist
 Route::get('/divide/view/{id}',[distributorController::class,'distribution_view']) ->name('distribution.view');
 Route::get('/dividing',[distributorController::class,'divided']) ->name('distribution.collection');
 Route::post('/divide-store',[distributorController::class,'storing']) ->name('distribution.store');
-
 Route::get('divide/edit/{id}',[distributorController::class,'edit'])->name('distribution.edit');
 Route::post('dividing/update/{id}',[distributorController::class,'update'])->name('distribution.update');
 

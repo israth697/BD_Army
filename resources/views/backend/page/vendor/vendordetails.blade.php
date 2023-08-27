@@ -16,7 +16,7 @@
   @csrf
   <div class="form-group">
     <label for="">Id_Number</label>
-    <input type="id_number" name="id_number" class="form-control" id=""  placeholder="Enter your identity">
+    <input type="number" name="id_number" class="form-control" id=""  placeholder="Enter your identity">
   </div>
   <div class="form-group">
     <label for="">Name</label>

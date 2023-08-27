@@ -29,7 +29,7 @@
   </div>
   <div class="form-group">
     <label for="">Reason</label>
-    <input type="text" name="reason" class="form-control" id=""  placeholder="Enter the reason">
+    <input type="name" name="reason" class="form-control" id=""  placeholder="Enter the reason">
   </div>
   
 <br>

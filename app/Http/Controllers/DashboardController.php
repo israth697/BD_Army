@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Armsetups;
 use App\Models\Armstypes;
 use App\Models\Damagestock;
+use App\Models\Distribution;
 use App\Models\Officer;
 use App\Models\Purchase;
 use App\Models\Rank;
@@ -28,14 +29,12 @@ class DashboardController extends Controller
         $soilder=Soilder::all()->count();
         $stock=Stock::all()->count();
         $vendor=Vendor::all()->count();
+        $distribution=Distribution::all()->count();
         
 
 
-    return view ('backend.page.dashboard.dashboard',compact('armsetup','armstype','damagestock','officer','purchase','rank','soilder','stock','vendor'));
+    return view ('backend.page.dashboard.dashboard',compact('armsetup','armstype','damagestock','officer','purchase','rank','soilder','stock','vendor','distribution'));
 }
 
-// public function accept (){
-//     return view('backend.page.dashboard.accept');
-//     }
 
 }

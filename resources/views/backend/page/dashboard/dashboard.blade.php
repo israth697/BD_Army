@@ -118,10 +118,10 @@
                                 <div class="card bg-dark text-white mb-4">
                                     <div class="card-body">Distribution</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{route('distribution.arms')}}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
-                                    <h6>{{$armstype}} </h6>
+                                    <h6>{{$distribution}} </h6>
                                 </div>
                             </div>
 

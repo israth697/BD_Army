@@ -27,7 +27,7 @@
       
    
 <td>
-<a class="btn btn-info" href="{{route('damage.view',$item->id)}}">View</a>
+<a class="btn btn-info" href="{{route('damage.view',$item->id)}}">Edit</a>
 <!-- <a class="btn btn-warning" href="">Update</a> -->
 <!-- <a class="btn btn-danger" href="{{route('damage.delete',$item->id)}}">Delete</a> -->
 </td>
