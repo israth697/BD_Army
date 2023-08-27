@@ -14,25 +14,18 @@
     @endif
   @csrf
   <div class="form-group">
-    <label for="">Purchase Name</label>
+    <label for="">Arms Name</label>
     <input type="name" name="name" value="{{$purchase->name}}" class="form-control" id=""  placeholder="purchase name">
   </div><br>
   <div class="form-group">
-    <label for="">Purchase Email</label>
-    <input type="email" name="email" value="{{$purchase->email}}" class="form-control" id=""  placeholder="purchase email">
+    <label for="">Arms Quantity</label>
+    <input type="number" name="quantity" value="{{$purchase->quantity}}" class="form-control" id=""  placeholder="purchase email">
   </div><br>
   <div class="form-group">
-    <label for="">Purchase Contact</label>
-    <input type="tel" name="contact" value="{{$purchase->contact}}" class="form-control" id=""  placeholder="purchase contact">
+    <label for="">Price</label>
+    <input type="number" name="price" value="{{$purchase->price}}" class="form-control" id=""  placeholder="purchase contact">
   </div><br>
-  <div class="form-group">
-    <label for="">Purchase Address</label>
-    <input type="text" name="address" value="{{$purchase->address}}" class="form-control" id=""  placeholder="purchase address">
-  </div><br>
-  <div class="form-group">
-    <label for="">Purchase Details</label>
-    <input type="text" name="details" value="{{$purchase->details}}" class="form-control" id=""  placeholder="purchase details">
-  </div><br>
+  
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
 </div>

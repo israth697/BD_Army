@@ -29,19 +29,16 @@ class PurchaseController extends Controller
         // dd($request->all());
         $request->validate([
             'name'=>'required',
-            'email'=>'required|email',
-            'contact'=>'required',
-            'address'=>'required',
-            'details'=>'required',
+            'quantity'=>'required',
+            'price'=>'required'
+            
         ]);
             // dd($request->all());
         Purchase::create([
             // database column name=>$request->input field name
             'name'=>$request->name,
-            'email'=>$request->email,
-            'contact'=>$request->contact,
-            'address'=>$request->address,
-            'details'=>$request->details,
+            'quantity'=>$request->quantity,
+            'price'=>$request->price,
             'vendor_id'=>$request->vendor_id,
 
         ]);
@@ -61,10 +58,9 @@ class PurchaseController extends Controller
         $purchase->update([
 
             'name'=>$request->name,
-            'email'=>$request->email,
-            'contact'=>$request->contact,
-            'address'=>$request->address,
-            'details'=>$request->details,
+            'quantity'=>$request->quantity,
+            'price'=>$request->price,
+            
             
         ]);
         return to_route('Purchase');

@@ -44,25 +44,18 @@
         <h2 class="mb-3" style="text-align: center">Purchase Information</h2>
         <hr>
         <div class="data-item">
-            <span class="data-label">Purchase Name:</span>
+            <span class="data-label">Arms Name:</span>
             <span class="data-value">{{$purchase->name}}</span>
         </div>
         <div class="data-item">
-            <span class="data-label">Purchase Mail:</span>
-            <span class="data-value">{{$purchase->email}}</span>
+            <span class="data-label">Arms quantity:</span>
+            <span class="data-value">{{$purchase->quantity}}</span>
         </div>
         <div class="data-item">
-            <span class="data-label">Purchase Contact:</span>
-            <span class="data-value">{{$purchase->contact}}</span>
+            <span class="data-label">Price:</span>
+            <span class="data-value">{{$purchase->price}}</span>
         </div>
-        <div class="data-item">
-            <span class="data-label">Purchase Address:</span>
-            <span class="data-value">{{$purchase->address}}</span>
-        </div>
-        <div class="data-item">
-            <span class="data-label">Purchase Details:</span>
-            <span class="data-value">{{$purchase->details}}</span>
-        </div>
+        
         <div class="data-item">
             <span class="data-label">Vendor Name:</span>
             <span class="data-value">{{$purchase->vendor->name}}</span>

@@ -10,11 +10,10 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Contact</th>
-      <th scope="col">Address</th>
-      <th scope="col">Details</th>
+      <th scope="col">Arms Name</th>
+      <th scope="col">Quantity of Arms</th>
+      <th scope="col">Price</th>
+      
       <th scope="col">Vendor Name</th>
       <th scope="col">Action</th>
     </tr>
@@ -24,10 +23,9 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$item->name}}</td>
-      <td>{{$item->email}}</td>
-      <td>{{$item->contact}}</td>
-      <td>{{$item->address}}</td>
-      <td>{{$item->details}}</td>
+      <td>{{$item->quantity}}</td>
+      <td>{{$item->price}}</td>
+      
       <td>{{$item->vendor->name}}</td>
       
    

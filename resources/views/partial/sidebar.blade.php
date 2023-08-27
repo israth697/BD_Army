@@ -11,10 +11,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Arms Item
                             </a>
-                            <a class="nav-link" href="{{route('Armsetup')}}">
+                            <!-- <a class="nav-link" href="{{route('Armsetup')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Arms Setup
-                            </a> 
+                            </a>  -->
+                            
                             <a class="nav-link" href="{{route('Purchase')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Purchase

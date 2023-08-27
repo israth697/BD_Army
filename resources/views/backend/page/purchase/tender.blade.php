@@ -14,25 +14,42 @@
     @endif
   @csrf
   <div class="form-group">
-    <label for="">Name</label>
-    <input type="name" name="name" class="form-control" id=""  placeholder="Enter name">
+    <label for="">Arms Name</label>
+    <select class="form-select" name="name" aria-label="Default select example">
+  <option selected>Selete the Arms Category</option>
+  <option value="Browning Hi Power">Browning Hi Power</option>
+  <option value="QSZ 92">QSZ 92</option>
+  <option value="Bersa Thunder 9">Bersa Thunder 9</option>
+  <option value="Type 57">Type 57</option>
+  <option value="KRISS Vector Gen II">KRISS Vector Gen II</option>
+  <option value="Heckler & Koch MP5">Heckler & Koch MP5</option>
+  <option value="BD-08">BD-08</option>
+  <option value="Type 56">Type 56</option>
+  <option value="AK-15">AK-15</option>
+  <option value="M4 Carbine">M4 Carbine</option>
+  <option value="Type 56 Carbine">Type 56 Carbine</option>
+  <option value="Zastava M59/66">Zastava M59/66</option>
+  <option value="BD-15">BD-15</option>
+  <option value="RPD">RPD</option>
+  <option value="Type 80">Type 80</option>
+  <option value="DShK">DShK</option>
+  <option value="AX308">AX308</option>
+  <option value="SC-76 Thunderbolt">SC-76 Thunderbolt</option>
+  <option value="Pindad SPR">Pindad SPR</option>
+  <option value="RPA Rangemaster">RPA Rangemaster</option>
+  <option value="Dragunov sniper rifle">Dragunov sniper rifle</option>
+  
+</select>
   </div>
   <div class="form-group">
-    <label for="">Email</label>
-    <input type="email" name="email" class="form-control" id=""  placeholder="Enter email">
+    <label for="">Quantity</label>
+    <input type="number" name="quantity" class="form-control" id=""  placeholder="Enter quantity">
   </div>
   <div class="form-group">
-    <label for="">Contact</label>
-    <input type="tel" name="contact" class="form-control" id=""  placeholder="Enter contact">
+    <label for="">Price</label>
+    <input type="number" name="price" class="form-control" id=""  placeholder="Enter Price">
   </div>
-  <div class="form-group">
-    <label for="">Address</label>
-    <input type="text" name="address" class="form-control" id=""  placeholder="Enter address">
-  </div>
-  <div class="form-group">
-    <label for="">Details</label>
-    <input type="text" name="details" class="form-control" id=""  placeholder="Enter details">
-  </div>
+  
   <div>
   <br>
   <label for="">Vendor Name</label>
