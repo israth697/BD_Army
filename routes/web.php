@@ -13,6 +13,7 @@ use App\Http\Controllers\ArmstypeController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\soildersController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\distributorController;
 use App\Http\Controllers\purchasedetailsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportController;
@@ -106,6 +107,19 @@ Route::get('/stock/view/{id}',[StockController::class,'stock_view']) ->name('sto
 Route::get('/weapons',[StockController::class,'collection']) ->name('weapon.collection');
 Route::post('/weapon-store',[StockController::class,'store']) ->name('weapon.store');
 Route::get('/weapon-delete/{id}',[StockController::class,'delete']) ->name('weapon.delete');
+
+
+Route::get('/divide',[distributorController::class,'distribution']) ->name('distribution.arms');
+Route::get('/divide/view/{id}',[distributorController::class,'distribution_view']) ->name('distribution.view');
+Route::get('/dividing',[distributorController::class,'divided']) ->name('distribution.collection');
+Route::post('/divide-store',[distributorController::class,'storing']) ->name('distribution.store');
+
+Route::get('divide/edit/{id}',[distributorController::class,'edit'])->name('distribution.edit');
+Route::post('dividing/update/{id}',[distributorController::class,'update'])->name('distribution.update');
+
+Route::get('/divide-delete/{id}',[distributorController::class,'delete']) ->name('distribution.delete');
+
+
 
 
 Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply');

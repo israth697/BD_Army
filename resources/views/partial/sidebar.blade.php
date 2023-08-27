@@ -54,6 +54,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Damage Stock
                             </a>
+                            <a class="nav-link" href="{{route('distribution.arms')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Distribution
+                            </a>
                             @endif
                            
                         </div>
