@@ -63,25 +63,25 @@ class PurchaseController extends Controller
 
     }
 
-    public function edit($id){
-        $purchase=Purchase::find($id);
-        return view('backend.page.purchase.purchase_edit',compact('purchase'));
-    }
+    // public function edit($id){
+    //     $purchase=Purchase::find($id);
+    //     return view('backend.page.purchase.purchase_edit',compact('purchase'));
+    // }
 
-    public function update(Request $request,$id)
-    {
-        $purchase=Purchase::find($id);
+    // public function update(Request $request,$id)
+    // {
+    //     $purchase=Purchase::find($id);
         
-        $purchase->update([
+    //     $purchase->update([
 
-            'name'=>$request->name,
-            'quantity'=>$request->quantity,
-            'price'=>$request->price,
+    //         'name'=>$request->name,
+    //         'quantity'=>$request->quantity,
+    //         'price'=>$request->price,
             
             
-        ]);
-        return to_route('Purchase');
-    }
+    //     ]);
+    //     return to_route('Purchase');
+    // }
 
     public function delete($id){
         $purchase=Purchase::find($id);

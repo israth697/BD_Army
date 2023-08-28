@@ -39,6 +39,7 @@ class distributorController extends Controller
             // database column name=>$request->input field name
             'armstype_id'=>$request->armstype_id,
             'quantity'=>$request->quantity,
+
             'name'=>$request->name,
             'purpose'=>$request->purpose,
             
@@ -53,20 +54,21 @@ class distributorController extends Controller
         return view('backend.page.distribution.distribute_edit',compact('distribution'));
     }
 
-    public function update(Request $request,$id)
-    {
-        $distribution=Distribution::find($id);
+    // public function update(Request $request,$id)
+    // {
+    //     //  dd($request->all());
+    //     $distribution=Distribution::find($id);
         
-        $distribution->update([
+    //     $distribution->update([
 
-            'armstype_id'=>$request->armstype_id,
-            'quantity'=>$request->quantity,
-            'name'=>$request->name,
-            'purpose'=>$request->purpose,
+    //         'armstype_id'=>$request->armstype_id,
+    //         'quantity'=>$request->quantity,
+    //         'name'=>$request->name,
+    //         'purpose'=>$request->purpose,
             
-        ]);
-        return to_route('distribution.arms');
-    }
+    //     ]);
+    //     return to_route('distribution.arms');
+    // }
 
     public function delete($id){
         $distribution=Distribution::find($id);

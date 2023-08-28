@@ -15,7 +15,7 @@
   @csrf
   <div class="form-group">
     <label for="">Arms Item Name</label>
-    <input type="name" name="armstype_id" value="{{$distribution->armstype->name}}" class="form-control" id=""  placeholder="Arms Item name">
+    <input type="name" name="{{$distribution->armstype->name}}" value="{{$distribution->armstype->id}}" class="form-control" id=""  placeholder="Arms Item name">
   </div><br>
   <div class="form-group">
     <label for="">Arms Quantity</label>
