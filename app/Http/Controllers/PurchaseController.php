@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Armstypes;
 use App\Models\Purchase;
+use App\Models\Stock;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 
@@ -28,14 +29,14 @@ class PurchaseController extends Controller
         return view ('backend.page.purchase.tender',compact('vendor','armstype'));
     }
     public function store(Request $request){
-        // dd($request->all());
+        
         $request->validate([
             'armstype_id'=>'required',
             'quantity'=>'required',
             'price'=>'required'
-            
         ]);
             // dd($request->all());
+        
         Purchase::create([
             // database column name=>$request->input field name
             'armstype_id'=>$request->armstype_id,
@@ -44,6 +45,20 @@ class PurchaseController extends Controller
             'vendor_id'=>$request->vendor_id,
 
         ]);
+
+        $stock=Stock::where('armstype_id',$request->armstype_id)->first();
+        if($stock)
+        {
+            $stock->increment('type_quantity',$request->quantity);
+        }else{
+            Stock::create([
+                'status'=>'Active',
+                'type_quantity'=>$request->quantity,
+                'armstype_id'=>$request->armstype_id
+            ]);
+        }
+
+
         return to_route('Purchase')->with('msg','Data store Successfully');
 
     }

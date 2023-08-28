@@ -50,7 +50,7 @@
                 @foreach($purchase as $key=>$item)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <th scope="row">{{$key+1}}</th>
+                    <!-- <th scope="row">{{$key+1}}</th> -->
                 
                     <td>{{$item->armstype->name}}</td>
                     <td>{{$item->quantity}}</td>
