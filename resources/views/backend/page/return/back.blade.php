@@ -16,7 +16,7 @@
 
   <div class="form-group">
     <label for="">Officer Name</label>
-    <input type="name"  name="name" class="form-control" id=""  placeholder="rank name">
+    <input type="name"  name="name" class="form-control" id=""  placeholder="officer name">
   </div>
   
   <br>

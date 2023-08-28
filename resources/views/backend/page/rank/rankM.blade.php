@@ -32,8 +32,8 @@
 <td>
   
   <a class="btn btn-info" href="{{route('rank.view',$item->id)}}">View</a>
-<a class="btn btn-warning" href="{{route('rank.edit',$item->id)}}">Edit</a>
-<a class="btn btn-danger" href="{{route('rank.delete',$item->id)}}">Delete</a>
+<!-- <a class="btn btn-warning" href="{{route('rank.edit',$item->id)}}">Edit</a>
+<a class="btn btn-danger" href="{{route('rank.delete',$item->id)}}">Delete</a> -->
 </td>
 </tr>
     @endforeach
