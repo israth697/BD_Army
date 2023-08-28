@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-  <h2>Arms Setup</h2>
+  <h2>Bullet Round Details</h2>
   <form action="{{route('Armsetup.store')}}" method="post" enctype="multipart/form-data">
   @if($errors->any())
         @foreach($errors->all() as $error)

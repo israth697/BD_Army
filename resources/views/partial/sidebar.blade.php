@@ -11,10 +11,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Arms Item
                             </a>
-                            <!-- <a class="nav-link" href="{{route('Armsetup')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Arms Setup
-                            </a>  -->
+                             
                             
                             <a class="nav-link" href="{{route('Purchase')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -36,6 +33,10 @@
                             <a class="nav-link" href="{{route('tender.Report')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Report
+                            </a>
+                            <a class="nav-link" href="{{route('Armsetup')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Round Uses
                             </a>
                         @endif
                             

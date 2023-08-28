@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Armstypes;
 use App\Models\Distribution;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class distributorController extends Controller
@@ -34,18 +35,27 @@ class distributorController extends Controller
             'purpose'=>'required'
             
         ]);
-            // dd($request->all());
-            Distribution::create([
-            // database column name=>$request->input field name
-            'armstype_id'=>$request->armstype_id,
-            'quantity'=>$request->quantity,
 
-            'name'=>$request->name,
-            'purpose'=>$request->purpose,
+        $check=
+
+        $stock=Stock::where('armstype_id',$request->armstype_id)->first();
+        if($stock->type_quantity>=$request->quantity)
+        {
+                // dd($request->all());
+                Distribution::create([
+                    // database column name=>$request->input field name
+                    'armstype_id'=>$request->armstype_id,
+                    'quantity'=>$request->quantity,
+                    'name'=>$request->name,
+                    'purpose'=>$request->purpose,
+                    
+        
+                ]);
+                return to_route('distribution.arms')->with('msg','Data store Successfully');
+        }else{
+            return to_route('distribution.arms')->with('msg','Stock Not Available.');
             
-
-        ]);
-        return to_route('distribution.arms')->with('msg','Data store Successfully');
+        }
 
     }
 

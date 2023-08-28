@@ -1,9 +1,9 @@
 @extends('backend.master')
 @section('content')
 <div class="container">
-    <h2>Arms Setup</h2>
+    <h2>Bullet Round</h2>
     <br>
-    <a class="btn btn-success" href="{{route('agree')}}">Add New Arms Setup</a>
+    <a class="btn btn-danger" href="{{route('agree')}}">Add New Bullet round</a>
  <br>
 <table class="table">
   <thead>
@@ -30,7 +30,7 @@
       <td>{{$item->armstype->name}}</td>
    
 <td>
-<a class="btn btn-warning" href="{{route('arms.setup.edit',$item->id)}}">Update</a>
+<!-- <a class="btn btn-warning" href="{{route('arms.setup.edit',$item->id)}}">Update</a> -->
 <a class="btn btn-danger" href="{{route('arms.setup.delete',$item->id)}}">Delete</a>
 </td>
 </tr>
