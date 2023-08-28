@@ -15,8 +15,9 @@
   @csrf
  
   <br>
+  <label for="">Arms Item</label>
   <select class="form-select" name="armstype_id" aria-label="amrrrrr mon">
-  <option selected>Select the Arms Type </option>
+  <!-- <option selected>Select the Arms Type </option> -->
   @foreach ($armstype as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach

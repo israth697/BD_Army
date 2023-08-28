@@ -34,7 +34,7 @@
   <div>
   <label for="">Rank</label>
   <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
-  <option selected>Open this select menu </option>
+  <!-- <option selected>Open this select menu </option> -->
   @foreach ($rank as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach
@@ -44,7 +44,7 @@
   <div class="form-group">
     <label for="">Corps</label>
     <select class="form-select" name="corps" aria-label="Default select example">
-  <option selected>Selete the crops category</option>
+  <!-- <option selected>Selete the crops category</option> -->
   <option value="Signal">Signal</option>
   <option value="Education">Education</option>
   <option value="Engineer">Engineer</option>

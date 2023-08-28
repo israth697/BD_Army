@@ -23,6 +23,7 @@ class VendorController extends Controller
     }
     public function store(Request $request) {
         $request->validate([
+            'id'=>'required',
             'name'=>'required',
             'email'=>'required|email',
             'contact'=>'required',

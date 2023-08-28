@@ -25,7 +25,7 @@
   <div>
   <label for="">Rank</label>
   <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
-  <option selected>Select the rank</option>
+  <!-- <option selected>Select the rank</option> -->
   @foreach ($rank as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach

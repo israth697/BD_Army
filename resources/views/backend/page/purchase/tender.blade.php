@@ -43,8 +43,9 @@
   </div> -->
 
   <br>
+  <label for="">Arms Name</label>
   <select class="form-select" name="armstype_id" aria-label="amrrrrr mon">
-  <option selected>Select the Arms Type </option>
+  <!-- <option selected>Select the Arms Type </option> -->
   @foreach ($armstype as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach
@@ -64,7 +65,7 @@
   <br>
   <label for="">Vendor Name</label>
   <select class="form-select" name="vendor_id" aria-label="amrrrrr mon">
-  <option selected value="null">Selete The Vendor Name</option>
+  <!-- <option selected value="null">Selete The Vendor Name</option> -->
   @foreach ($vendor as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach

@@ -20,8 +20,9 @@
   </div>
   
   <br>
+  <label for="">Arms Item</label>
   <select class="form-select" name="armstype_id" aria-label="amrrrrr mon">
-  <option selected>Select the Arms Type </option>
+  <!-- <option selected>Select the Arms Type </option> -->
   @foreach ($armstype as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach
@@ -31,7 +32,7 @@
   <div>
   <label for="">Rank</label>
   <select class="form-select" name="rank_id" aria-label="amrrrrr mon">
-  <option selected>Open this select menu </option>
+  <!-- <option selected>Open this select menu </option> -->
   @foreach ($rank as $item )
   <option  value="{{$item->id}}">{{$item->name}}</option>
   @endforeach
