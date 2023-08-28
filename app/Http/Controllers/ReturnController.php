@@ -4,37 +4,45 @@ namespace App\Http\Controllers;
 
 use App\Models\Armsreturn;
 use App\Models\Armstypes;
+use App\Models\Rank;
 use Illuminate\Http\Request;
 
 class ReturnController extends Controller
 {
     public function return (){
-        $armsreturn=Armsreturn::with('armstype')->paginate(5);
+        $armsreturn=Armsreturn::with('armstype','rank')->paginate(5);
         return view ('backend.page.return.return',compact('armsreturn'));
+    }
+
+    public function return_view ($id){
+        $armsreturn=Armsreturn::find($id);
+        // dd($vendor);
+        return view('backend.page.return.return_view',compact('armsreturn'));
     }
 
     public function back (){
         $armstype=Armstypes::all();
-        return view ('backend.page.return.back',compact('armstype'));
+        $rank=Rank::all();
+        return view ('backend.page.return.back',compact('armstype','rank'));
     }
 
-    public function storing(Request $request){
+    public function returnstore (Request $request){
         // dd($request->all());
         $request->validate([
-            'armstype_id'=>'required',
-            'quantity'=>'required',
             'name'=>'required',
-            'purpose'=>'required'
+            'armstype_id'=>'required',
+            'rank_id'=>'required',
+            'date'=>'required',
+            
             
         ]);
             // dd($request->all());
             Armsreturn::create([
             // database column name=>$request->input field name
-            'armstype_id'=>$request->armstype_id,
-            'quantity'=>$request->quantity,
-
             'name'=>$request->name,
-            'purpose'=>$request->purpose,
+            'armstype_id'=>$request->armstype_id,
+            'rank_id'=>$request->rank_id,
+            'date'=>$request->date,
             
 
         ]);

@@ -17,6 +17,7 @@ use App\Http\Controllers\distributorController;
 use App\Http\Controllers\purchasedetailsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ReturnController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,8 +119,10 @@ Route::post('dividing/update/{id}',[distributorController::class,'update'])->nam
 Route::get('/divide-delete/{id}',[distributorController::class,'delete']) ->name('distribution.delete');
 
 Route::get('/return',[ReturnController::class,'return'])->name('return.arms');
+Route::get('/return/view/{id}',[ReturnController::class,'return_view']) ->name('return.view');
 Route::get('/back',[ReturnController::class,'back'])->name('back.arms');
 Route::get('/returnback',[ReturnController::class,'returnback'])->name('returnback.arms');
+Route::post('/return-store',[ReturnController::class,'returnstore']) ->name('return.store');
 
 
 Route::get('/supply',[VendorController::class,'vendor']) ->name('vendor.supply');

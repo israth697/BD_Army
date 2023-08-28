@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('armsreturns', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('armstype_id')->constrained('armstypes')->cascadeOnDelete(); 
+            $table->foreignId('rank_id')->constrained('ranks')->cascadeOnDelete();
+            $table->date('date');
+            
             $table->timestamps();
         });
     }
