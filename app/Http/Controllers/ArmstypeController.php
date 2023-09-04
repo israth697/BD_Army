@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 class ArmstypeController extends Controller
 {
     public function Armstype (){
-        $armstype=Armstypes::paginate(5);
+        $armstype=Armstypes::paginate(3);
         return view ('backend.page.armstype.Armstype',compact('armstype'));
     }
 

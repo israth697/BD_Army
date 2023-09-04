@@ -19,7 +19,10 @@
   </thead>
   <tbody>
     @foreach($vendor as $key=>$item)
+    <!-- orderByDesc('column_name
+'); -->
     <tr>
+      
       <th scope="row">{{$key+1}}</th>
       <td>{{$item->name}}</td>
       <td>{{$item->email}}</td>

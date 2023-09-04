@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\stockcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/get/stocks',[stockcontroller::class,'getstocks']);
+Route::get('/get/stock/{id}',[stockcontroller::class,'stockView']);
+Route::post('/create/stock',[stockcontroller::class,'create']);
