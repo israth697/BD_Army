@@ -30,8 +30,8 @@ class ReturnController extends Controller
         // dd($request->all());
         $request->validate([
             'name'=>'required',
-            'armstype_id'=>'required',
-            'rank_id'=>'required',
+            'armstype_id'=>'required|numeric',
+            'rank_id'=>'required|numeric',
             'date'=>'required',
             
             
@@ -49,12 +49,6 @@ class ReturnController extends Controller
         return to_route('return.arms')->with('msg','Data store Successfully');
 
     }
-
-
-
-
-
-
 
 
 }
