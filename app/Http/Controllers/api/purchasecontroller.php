@@ -3,41 +3,40 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Distribution;
+use App\Models\Purchase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class Distributorcontroller extends Controller
+class purchasecontroller extends Controller
 {
-    public function getdistributor(){
-        $distribution=Distribution::all();
+    public function getpurchase(){
+        $purchase=Purchase::all();
 
         return response()->json([
             'success'=>true,
-            'data'=>$distribution,
-            'message'=>'All distribution list',
+            'data'=>$purchase,
+            'message'=>'All purchase list',
             'status_code'=>200
         ]);
     }
 
-    public function distributorView($id){
-        $distribution=Distribution::find($id);
+    public function purchasesView($id){
+        $purchase=Purchase::find($id);
     
         return response()->json([
             'success'=>true,
-            'data'=>$distribution,
-            'message'=>'Single distribution view',
+            'data'=>$purchase,
+            'message'=>'Single purchase view',
             'status_code'=>200
         ]);
     }
 
-    public function createdistributor(Request $request){
-
+    public function createpurchase(Request $request){
         $validate=Validator::make($request->all(),[
             'armstype_id'=>'required',
             'quantity'=>'required',
-            'name'=>'required',
-            'purpose'=>'required'
+            'price'=>'required',
+            'vendor_id'=>'required',
 
         ]);
            
@@ -52,22 +51,21 @@ class Distributorcontroller extends Controller
         
         }
         
-         $distribution=Distribution::create([
+        $purchase=Purchase::create([
         
             'armstype_id'=>$request->armstype_id,
             'quantity'=>$request->quantity,
-            'name'=>$request->name,
-            'purpose'=>$request->purpose,
+            'price'=>$request->price,
+            'vendor_id'=>$request->vendor_id,
             
         ]);
 
 
         return response()->json([
             'success'=>true,
-            'data'=>$distribution,
-            'message'=>'distribution created successfull.',
+            'data'=>$purchase,
+            'message'=>'purchase created successfull.',
             'status_code'=>200
         ]);
-        
     }
 }

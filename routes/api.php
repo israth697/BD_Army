@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\api\armstypecontroller;
 use App\Http\Controllers\api\Distributorcontroller;
+use App\Http\Controllers\api\purchasecontroller;
 use App\Http\Controllers\api\returncontroller;
+use App\Http\Controllers\api\soildercontroller;
 use App\Http\Controllers\api\stockcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +36,8 @@ Route::get('/get/distributor',[Distributorcontroller::class,'getdistributor']);
 Route::get('/get/distributor/{id}',[Distributorcontroller::class,'distributorView']);
 Route::post('/create/distributor',[Distributorcontroller::class,'createdistributor']);
 
+Route::get('/get/purchases',[purchasecontroller::class,'getpurchase']);
+Route::get('/get/purchases/{id}',[purchasecontroller::class,'purchasesView']);
+Route::post('/create/purchases',[purchasecontroller::class,'createpurchase']);
 
-
-
+Route::get('/get/soilders',[soildercontroller::class,'getsoilders']);
