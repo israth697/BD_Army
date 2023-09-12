@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\StockResource;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,9 +11,10 @@ use Illuminate\Support\Facades\Validator;
 class stockcontroller extends Controller
 {
     public function getstocks(){
-        $stocks=Stock::all();
-
-        return $this->responseWithSuccess($stocks,"All stock list");
+        $stocks=Stock::with('armstype')->get();
+        // return $this->responseWithSuccess($stocks,'All stock list');
+        return $this->responseWithSuccess(StockResource::collection($stocks),'All stock list');
+        
     }
 
     public function stockView($id){
@@ -23,7 +25,7 @@ class stockcontroller extends Controller
     public function create(Request $request){
 
         $validate=Validator::make($request->all(),[
-            'armstype_id'=>'required|numeric',
+            'armstype_id'=>'required',
             'type_quantity'=>'required',
 
         ]);
