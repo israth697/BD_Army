@@ -11,24 +11,12 @@ class armstypecontroller extends Controller
 {
     public function getarms(){
         $arms=Armstypes::all();
-
-        return response()->json([
-            'success'=>true,
-            'data'=>$arms,
-            'message'=>'All arms list',
-            'status_code'=>200
-        ]);
+        return $this->responseWithSuccess($arms,"All arms list");
     }
 
     public function armsView($id){
         $arms=Armstypes::find($id);
-    
-        return response()->json([
-            'success'=>true,
-            'data'=>$arms,
-            'message'=>'Single arms view',
-            'status_code'=>200
-        ]);
+        return $this->responseWithSuccess($arms,"Single arms view");
     }
 
     public function createarms(Request $request){
@@ -53,13 +41,7 @@ class armstypecontroller extends Controller
            
         if($validate->fails())
         {
-            return response()->json([
-            'success'=>false,
-            'data'=>[],
-            'message'=>$validate->getMessageBag(),
-            'status_code'=>200
-            ]);
-        
+            return $this->responseWithError($validate->getMessageBag());
         }
         
         $arms=Armstypes::create([
@@ -70,12 +52,7 @@ class armstypecontroller extends Controller
         ]);
 
 
-        return response()->json([
-            'success'=>true,
-            'data'=>$arms,
-            'message'=>'arms created successfull.',
-            'status_code'=>200
-        ]);
+        return $this->responseWithSuccess($arms,"arms created successfull.");
         
     }
 }

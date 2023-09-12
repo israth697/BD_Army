@@ -12,23 +12,12 @@ class stockcontroller extends Controller
     public function getstocks(){
         $stocks=Stock::all();
 
-        return response()->json([
-            'success'=>true,
-            'data'=>$stocks,
-            'message'=>'All stock list',
-            'status_code'=>200
-        ]);
+        return $this->responseWithSuccess($stocks,"All stock list");
     }
 
     public function stockView($id){
         $stock=Stock::find($id);
-    
-        return response()->json([
-            'success'=>true,
-            'data'=>$stock,
-            'message'=>'Single stock view',
-            'status_code'=>200
-        ]);
+        return $this->responseWithSuccess($stock,"Single stock view");
     }
 
     public function create(Request $request){
@@ -42,13 +31,7 @@ class stockcontroller extends Controller
 
         if($validate->fails())
         {
-            return response()->json([
-            'success'=>false,
-            'data'=>[],
-            'message'=>$validate->getMessageBag(),
-            'status_code'=>200
-            ]);
-        
+            return $this->responseWithError($validate->getMessageBag()); 
         }
         
          $stock = Stock::create([
@@ -57,14 +40,8 @@ class stockcontroller extends Controller
             'type_quantity'=>$request->type_quantity,
         ]);
 
-
-        return response()->json([
-            'success'=>true,
-            'data'=>$stock,
-            'message'=>'stock created successfull.',
-            'status_code'=>200
-        ]);
-        
+        return $this->responseWithSuccess($stock,"stock created successfull.");
+    
     }
    
 

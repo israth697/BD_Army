@@ -41,3 +41,12 @@ Route::get('/get/purchases/{id}',[purchasecontroller::class,'purchasesView']);
 Route::post('/create/purchases',[purchasecontroller::class,'createpurchase']);
 
 Route::get('/get/soilders',[soildercontroller::class,'getsoilders']);
+Route::get('/get/soilder/{id}',[soildercontroller::class,'soilderView']);
+Route::post('/create/soilder',[soildercontroller::class,'createsoilder']);
+
+
+
+
+
+
+
