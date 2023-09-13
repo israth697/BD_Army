@@ -6,6 +6,7 @@ use App\Http\Controllers\api\purchasecontroller;
 use App\Http\Controllers\api\returncontroller;
 use App\Http\Controllers\api\soildercontroller;
 use App\Http\Controllers\api\stockcontroller;
+use App\Http\Controllers\api\vendorcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/get/stocks',[stockcontroller::class,'getstocks']);
 Route::get('/get/stock/{id}',[stockcontroller::class,'stockView']);
 Route::post('/create/stock',[stockcontroller::class,'create']);
+Route::put('/get/update_stock/{id}',[stockcontroller::class,'stockupdate']);
 
 Route::get('/get/armstypes',[armstypecontroller::class,'getarms']);
 Route::get('/get/arms/{id}',[armstypecontroller::class,'armsView']);
@@ -44,9 +46,10 @@ Route::get('/get/soilders',[soildercontroller::class,'getsoilders']);
 Route::get('/get/soilder/{id}',[soildercontroller::class,'soilderView']);
 Route::post('/create/soilder',[soildercontroller::class,'createsoilder']);
 
+Route::get('/get/vendor',[vendorcontroller::class,'getvendor']);
+Route::get('/get/vendor/{id}',[vendorcontroller::class,'vendorView']);
+Route::post('/create/vendor',[vendorcontroller::class,'createvendor']);
 
-
-
-
+Route::put('/get/update_vendor/{id}',[vendorcontroller::class,'vendorupdate']);
 
 

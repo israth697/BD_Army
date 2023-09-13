@@ -43,7 +43,18 @@ class stockcontroller extends Controller
         ]);
 
         return $this->responseWithSuccess($stock,"stock created successfull.");
-    
+    }
+
+    public function stockupdate(Request $request,$id){
+        $stock=Stock::find($id);
+        if($stock){
+           $stock->update([
+            'armstype_id'=>$request->armstype_id,
+            'type_quantity'=>$request->type_quantity,
+           ]);
+           return $this->responseWithSuccess($stock,"Stock Updated successfully.");
+        }
+
     }
    
 
