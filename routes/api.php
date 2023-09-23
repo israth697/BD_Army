@@ -6,6 +6,7 @@ use App\Http\Controllers\api\purchasecontroller;
 use App\Http\Controllers\api\returncontroller;
 use App\Http\Controllers\api\soildercontroller;
 use App\Http\Controllers\api\stockcontroller;
+use App\Http\Controllers\api\userController;
 use App\Http\Controllers\api\vendorcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -52,4 +53,5 @@ Route::post('/create/vendor',[vendorcontroller::class,'createvendor']);
 
 Route::put('/get/update_vendor/{id}',[vendorcontroller::class,'vendorupdate']);
 
-
+Route::post('/login',[userController::class, 'login']);
+Route::post('/registration',[userController::class, 'registration']);
